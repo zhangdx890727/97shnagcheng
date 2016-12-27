@@ -1,7 +1,35 @@
+
+
 <ion-view>
 
-    <h1>home页面</h1>
-    <h1>home页面</h1>
-    <h1>home页面</h1>
+    <ion-nav-bar class="item-input-inset homePageTop">
+        <!--logo-->
+        <img ng-src="images/logo.png" alt="logo">
+
+        <!--搜索框-->
+        <div class="searchList">
+            <label class="item item-input">
+                <input ng-model="searchValue" type="text" placeholder="例：大闸蟹" >
+            </label>
+
+            <button class="searchListBtn" ng-click="doSearch(searchValue)">
+
+            </button>
+        </div>
+
+        <!--右边侧拉菜单-->
+        <ion-nav-buttons side="right">
+            <button menu-toggle="right" class="button home-side-list"></button>
+        </ion-nav-buttons>
+
+    </ion-nav-bar>
+
+
+
+    <ion-content>
+
+        <h1>首页页面</h1>
+
+    </ion-content>
 
 </ion-view>
