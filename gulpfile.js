@@ -94,7 +94,7 @@ gulp.task('default',function () {
     gulp.watch(['src/js/*.js','src/js/controllers/*.js','src/js/services/*.js'], ['lint', 'js']);
     //
     // // 监听 image 文件
-    // gulp.watch('imges/*', ['img']);
+    gulp.watch('imges/*', ['img']);
     livereload.listen();
     // Watch any files in dest/, reload on change
     gulp.watch(['dist/**']).on('change', livereload.changed);
