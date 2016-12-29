@@ -2468,11 +2468,11 @@ window.ionic.version = '1.3.1';
   // setup listeners to know when the device is ready to go
   function onWindowLoad() {
     if (self.isWebView()) {
-      // the window and scripts are fully loaded, and a cordova/phonegap
+      // the window and js are fully loaded, and a cordova/phonegap
       // object exists then let's listen for the deviceready
       document.addEventListener("deviceready", onPlatformReady, false);
     } else {
-      // the window and scripts are fully loaded, but the window object doesn't have the
+      // the window and js are fully loaded, but the window object doesn't have the
       // cordova/phonegap object, so its just a browser, not a webview wrapped w/ cordova
       onPlatformReady();
     }
@@ -11426,7 +11426,7 @@ ionic.views.Slider = ionic.views.View.inherit({
                     var _img = $(this);
                     _img.addClass('swiper-lazy-loading');
                     var background = _img.attr('data-background');
-                    var src = _img.attr('data-src'),
+                    var src = _img.attr('data-source'),
                         srcset = _img.attr('data-srcset');
                     s.loadImage(_img[0], (src || background), srcset, false, function () {
                         if (background) {
@@ -11440,7 +11440,7 @@ ionic.views.Slider = ionic.views.View.inherit({
                             }
                             if (src) {
                                 _img.attr('src', src);
-                                _img.removeAttr('data-src');
+                                _img.removeAttr('data-source');
                             }
 
                         }
@@ -13805,15 +13805,15 @@ function baseExtend(dst, objs, deep) {
  * @kind function
  *
  * @description
- * Extends the destination object `dst` by copying own enumerable properties from the `src` object(s)
- * to `dst`. You can specify multiple `src` objects. If you want to preserve original objects, you can do so
+ * Extends the destination object `dst` by copying own enumerable properties from the `source` object(s)
+ * to `dst`. You can specify multiple `source` objects. If you want to preserve original objects, you can do so
  * by passing an empty object as the target: `var object = angular.extend({}, object1, object2)`.
  *
  * **Note:** Keep in mind that `angular.extend` does not support recursive merge (deep copy). Use
  * {@link angular.merge} for this.
  *
  * @param {Object} dst Destination object.
- * @param {...Object} src Source object(s).
+ * @param {...Object} source Source object(s).
  * @returns {Object} Reference to `dst`.
  */
 function extend(dst) {
@@ -13828,15 +13828,15 @@ function extend(dst) {
 * @kind function
 *
 * @description
-* Deeply extends the destination object `dst` by copying own enumerable properties from the `src` object(s)
-* to `dst`. You can specify multiple `src` objects. If you want to preserve original objects, you can do so
+* Deeply extends the destination object `dst` by copying own enumerable properties from the `source` object(s)
+* to `dst`. You can specify multiple `source` objects. If you want to preserve original objects, you can do so
 * by passing an empty object as the target: `var object = angular.merge({}, object1, object2)`.
 *
 * Unlike {@link angular.extend extend()}, `merge()` recursively descends into object properties of source
 * objects, performing a deep copy.
 *
 * @param {Object} dst Destination object.
-* @param {...Object} src Source object(s).
+* @param {...Object} source Source object(s).
 * @returns {Object} Reference to `dst`.
 */
 function merge(dst) {
@@ -14998,7 +14998,7 @@ function angularInit(element, bootstrap) {
  *
  * Angular will detect if it has been loaded into the browser more than once and only allow the
  * first loaded script to be bootstrapped and will report a warning to the browser console for
- * each of the subsequent scripts. This prevents strange results in applications, where otherwise
+ * each of the subsequent js. This prevents strange results in applications, where otherwise
  * multiple instances of Angular try to work on the DOM.
  *
  * <div class="alert alert-warning">
@@ -15021,7 +15021,7 @@ function angularInit(element, bootstrap) {
  *   {{greeting}}
  * </div>
  *
- * <script src="angular.js"></script>
+ * <script source="angular.js"></script>
  * <script>
  *   var app = angular.module('demo', [])
  *   .controller('WelcomeController', function($scope) {
@@ -20763,7 +20763,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
       Suffix = 'Directive',
       COMMENT_DIRECTIVE_REGEXP = /^\s*directive\:\s*([\w\-]+)\s+(.*)$/,
       CLASS_DIRECTIVE_REGEXP = /(([\w\-]+)(?:\:([^;]+))?;?)/,
-      ALL_OR_NOTHING_ATTRS = makeMap('ngSrc,ngSrcset,src,srcset'),
+      ALL_OR_NOTHING_ATTRS = makeMap('ngSrc,ngSrcset,source,srcset'),
       REQUIRE_PREFIX_REGEXP = /^(?:(\^\^?)?(\?)?(\^\^?)?)?/;
 
   // Ref: http://developers.whatwg.org/webappapis.html#event-handler-idl-attributes
@@ -21073,11 +21073,11 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
    *
    * @description
    * Retrieves or overrides the default regular expression that is used for whitelisting of safe
-   * urls during img[src] sanitization.
+   * urls during img[source] sanitization.
    *
    * The sanitization is a security measure aimed at prevent XSS attacks via html links.
    *
-   * Any url about to be assigned to img[src] via data-binding is first normalized and turned into
+   * Any url about to be assigned to img[source] via data-binding is first normalized and turned into
    * an absolute url. Afterwards, the url is matched against the `imgSrcSanitizationWhitelist`
    * regular expression. If a match is found, the original url is written into the dom. Otherwise,
    * the absolute url is prefixed with `'unsafe:'` string and only then is it written into the DOM.
@@ -21331,7 +21331,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
 
         if ((nodeName === 'a' && (key === 'href' || key === 'xlinkHref')) ||
             (nodeName === 'img' && key === 'src')) {
-          // sanitize a[href] and img[src] values
+          // sanitize a[href] and img[source] values
           this[key] = value = $$sanitizeUri(value, key === 'src');
         } else if (nodeName === 'img' && key === 'srcset') {
           // sanitize img[srcset] values
@@ -25026,7 +25026,7 @@ function createHttpBackend($browser, createXhr, $browserDefer, callbacks, rawDoc
 
   function jsonpReq(url, callbackId, done) {
     // we can't use jQuery/jqLite here because jQuery does crazy stuff with script elements, e.g.:
-    // - fetches local scripts via XHR and evals them
+    // - fetches local js via XHR and evals them
     // - adds and immediately removes script elements from the document
     var script = rawDocument.createElement('script'), callback = null;
     script.type = "text/javascript";
@@ -25340,7 +25340,7 @@ function $InterpolateProvider() {
 
       // Concatenating expressions makes it hard to reason about whether some combination of
       // concatenated values are unsafe to use and could easily lead to XSS.  By requiring that a
-      // single expression be used for iframe[src], object[src], etc., we ensure that the value
+      // single expression be used for iframe[source], object[source], etc., we ensure that the value
       // that's used is assigned or constructed by some JS code somewhere that is more testable or
       // make it obvious that you bound the value to some user controlled value.  This helps reduce
       // the load when auditing for XSS issues.
@@ -30854,11 +30854,11 @@ function $$SanitizeUriProvider() {
   /**
    * @description
    * Retrieves or overrides the default regular expression that is used for whitelisting of safe
-   * urls during img[src] sanitization.
+   * urls during img[source] sanitization.
    *
    * The sanitization is a security measure aimed at prevent XSS attacks via html links.
    *
-   * Any url about to be assigned to img[src] via data-binding is first normalized and turned into
+   * Any url about to be assigned to img[source] via data-binding is first normalized and turned into
    * an absolute url. Afterwards, the url is matched against the `imgSrcSanitizationWhitelist`
    * regular expression. If a match is found, the original url is written into the dom. Otherwise,
    * the absolute url is prefixed with `'unsafe:'` string and only then is it written into the DOM.
@@ -30906,7 +30906,7 @@ var SCE_CONTEXTS = {
   CSS: 'css',
   URL: 'url',
   // RESOURCE_URL is a subtype of URL used in contexts where a privileged resource is sourced from a
-  // url.  (e.g. ng-include, script src, templateUrl)
+  // url.  (e.g. ng-include, script source, templateUrl)
   RESOURCE_URL: 'resourceUrl',
   JS: 'js'
 };
@@ -31166,7 +31166,7 @@ function $SceDelegateProvider() {
      *
      * @description
      * Returns an object that is trusted by angular for use in specified strict
-     * contextual escaping contexts (such as ng-bind-html, ng-include, any src
+     * contextual escaping contexts (such as ng-bind-html, ng-include, any source
      * attribute interpolation, any dom event binding attribute interpolation
      * such as for onclick,  etc.) that uses the provided value.
      * See {@link ng.$sce $sce} for enabling strict contextual escaping.
@@ -34558,7 +34558,7 @@ forEach(ALIASED_ATTR, function(htmlAttr, ngAttr) {
   };
 });
 
-// ng-src, ng-srcset, ng-href are interpolated
+// ng-source, ng-srcset, ng-href are interpolated
 forEach(['src', 'srcset', 'href'], function(attrName) {
   var normalized = directiveNormalize('ng-' + attrName);
   ngAttributeAliasDirectives[normalized] = function() {
@@ -34585,8 +34585,8 @@ forEach(['src', 'srcset', 'href'], function(attrName) {
 
           attr.$set(name, value);
 
-          // on IE, if "ng:src" directive declaration is used and "src" attribute doesn't exist
-          // then calling element.setAttribute('src', 'foo') doesn't do anything, so we need
+          // on IE, if "ng:source" directive declaration is used and "source" attribute doesn't exist
+          // then calling element.setAttribute('source', 'foo') doesn't do anything, so we need
           // to set the property as well to achieve the desired effect.
           // we use attr[attrName] value since $set can sanitize the url.
           if (msie && propName) element.prop(propName, attr[name]);
@@ -38077,7 +38077,7 @@ var ngControllerDirective = [function() {
           });
 
           // For now, we only test on Chrome,
-          // as Safari does not load the page with Protractor's injected scripts,
+          js
           // and Firefox webdriver always disables content security policy (#6358)
           if (browser.params.browser !== 'chrome') {
             return;
@@ -48459,7 +48459,7 @@ var inlineElements = angular.extend({}, optionalEndTagInlineElements, toMap("a,a
 // https://wiki.whatwg.org/wiki/Sanitization_rules#svg_Elements
 // Note: the elements animate,animateColor,animateMotion,animateTransform,set are intentionally omitted.
 // They can potentially allow for arbitrary javascript to be executed. See #11290
-var svgElements = toMap("circle,defs,desc,ellipse,font-face,font-face-name,font-face-src,g,glyph," +
+var svgElements = toMap("circle,defs,desc,ellipse,font-face,font-face-name,font-face-source,g,glyph," +
         "hkern,image,linearGradient,line,marker,metadata,missing-glyph,mpath,path,polygon,polyline," +
         "radialGradient,rect,stop,svg,switch,text,title,tspan");
 
@@ -48473,7 +48473,7 @@ var validElements = angular.extend({},
                                    optionalEndTagElements);
 
 //Attributes that have href and hence need to be sanitized
-var uriAttrs = toMap("background,cite,href,longdesc,src,xlink:href");
+var uriAttrs = toMap("background,cite,href,longdesc,source,xlink:href");
 
 var htmlAttrs = toMap('abbr,align,alt,axis,bgcolor,border,cellpadding,cellspacing,class,clear,' +
     'color,cols,colspan,compact,coords,dir,face,headers,height,hreflang,hspace,' +
@@ -51899,7 +51899,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
      *   };
      * });
      * </pre>
-     * <img src='../ngdoc_assets/StateGoExamples.png'/>
+     * <img source='../ngdoc_assets/StateGoExamples.png'/>
      *
      * @param {string} to Absolute state name or relative state path. Some examples:
      *

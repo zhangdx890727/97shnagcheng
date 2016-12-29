@@ -1,9 +1,9 @@
 .homePageTop{
     padding: 1rem;
-    height: 4.4rem;
+    height: 4.6rem;
 }
 .homePageTop img{
-    height: 2.4rem;z-index: 99
+    height: 2.6rem;z-index: 99
 }
 .home-side-list{
     background: url("../images/sidelist.png") no-repeat center top;
@@ -13,14 +13,14 @@
 }
 
 .searchList{
-    height: 2.4rem;
+    height: 2.6rem;
     position: relative !important;
     z-index: 99;
     margin: 1rem;
     width: 75%;
 }
 .searchList .item-input{
-    height: 2.6rem;
+    height: 2.8rem;
     padding: 0 2rem;
     border:.1rem solid #cccccc;
     border-radius: 1.2rem;
@@ -36,4 +36,91 @@
     top:.4rem;
     right:1rem;
     z-index: 999;
+}
+/*内容*/
+.homeContent{
+    background-color: #eeeeee;
+}
+.homeContent .homeContentTop{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem ;
+}
+.homeContent .homeContentTop img{
+    height:1.4rem;
+}
+.goodsList{
+    margin: 0 .6rem;
+    background: #eeeeee;
+}
+.goods{
+    display: inline-block;
+    height: 15.8rem;
+    width: 16.9rem;
+    margin: .6rem;
+    padding-top: 1rem;
+    background-color: white;
+    float: left;
+}
+.goods .goodsPic{
+    display: block;
+    margin: .1rem auto;
+    width: 10rem;
+}
+.goodsArg{
+    position: relative;
+    margin: 0 1rem 1rem 1rem;
+}
+.goodsNum{
+    position: absolute;
+    bottom: -1.5rem;
+    right:0;
+}
+.goodsNum img{
+    height: 3.4rem;
+}
+.goodsPrice p{
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0.7rem;
+}
+.goodsPrice p span:nth-child(1){
+    color: red;
+}
+.goodsPrice p span:nth-child(2){
+    color: #999999;
+}
+
+
+
+
+/*轮播图>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+.topCarouselImg{
+    height: 14.5rem;
+    width: 100%;
+}
+.topCarousel{
+    position: relative;
+    width: 100%;
+}
+.topCarousel .slider-slide{
+    margin-bottom: -.5rem;
+}
+.topCarousel .slider-pager{
+    text-align: left;
+    padding-left: 3rem;
+    line-height: 4.8rem;
+    height: 3.8rem;
+}
+.topCarousel .slider-pager-page{
+    width: .6rem;
+    opacity: .1;
+    color: red;
+}
+.topCarousel .ion-record::before{
+    content: '.';
+}
+.topCarousel .ion-record{
+    font-size: 5rem;
 }

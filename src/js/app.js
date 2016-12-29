@@ -1,7 +1,7 @@
 /**
  * Created by lx on 2016/12/26.
  */
-angular.module('myApp',['ionic','ngRoute','myApp.tabs','myApp.home','myApp.integral','myApp.league','myApp.person']).config(['$stateProvider','$urlRouterProvider','$ionicConfigProvider',function ($stateProvider,$urlRouterProvider,$ionicConfigProvider) {
+angular.module('myApp',['ionic','ngRoute','myApp.slideBox','myApp.httpFactory','myApp.tabs','myApp.home','myApp.integral','myApp.league','myApp.person','myApp.homeDetail']).config(['$stateProvider','$urlRouterProvider','$ionicConfigProvider',function ($stateProvider,$urlRouterProvider,$ionicConfigProvider) {
     //安卓手机的适配问题
     $ionicConfigProvider.tabs.position('bottom');
     $ionicConfigProvider.tabs.style('standard');
