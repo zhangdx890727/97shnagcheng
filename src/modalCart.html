@@ -1,0 +1,36 @@
+<div class="modal">
+
+    <div class=" modalCart" ng-click="closeModal()"></div>
+
+    <div class="modalMain">
+        <div class="modalMainTop">
+            <img ng-src="http://114.112.94.166{{goods.goods_introduction}}" alt="" class="col-40">
+            <div class="col-60">
+                <p>{{goods.goods_name}}</p>
+                <p>￥{{goods.shop_price}}/件</p>
+                <p>库存{{goods.goods_number}}件</p>
+            </div>
+        </div>
+
+        <div class="modalNum">
+            <div class="modalNumDiv">
+                <span class="modalSpan">数量</span>
+                <div>
+                    <button>-</button>
+                    <input type="text" value="1">
+                    <button>+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modalBtn">
+            <div>加入购物车</div>
+            <div>立即购买</div>
+        </div>
+
+
+    </div>
+
+
+
+</div>

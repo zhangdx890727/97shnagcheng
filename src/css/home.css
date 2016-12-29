@@ -52,16 +52,18 @@
 }
 .goodsList{
     margin: 0 .6rem;
-    background: #eeeeee;
 }
-.goods{
+.col-50{
     display: inline-block;
     height: 15.8rem;
-    width: 16.9rem;
-    margin: .6rem;
+    background-color: #eeeeee;
+    float: left;
+}
+.goods{
+    height: 15.8rem;
+    margin: .6rem .3rem;
     padding-top: 1rem;
     background-color: white;
-    float: left;
 }
 .goods .goodsPic{
     display: block;
@@ -74,7 +76,7 @@
 }
 .goodsNum{
     position: absolute;
-    bottom: -1.5rem;
+    bottom: -1.2rem;
     right:0;
 }
 .goodsNum img{
@@ -91,10 +93,6 @@
 .goodsPrice p span:nth-child(2){
     color: #999999;
 }
-
-
-
-
 /*轮播图>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 .topCarouselImg{
     height: 14.5rem;

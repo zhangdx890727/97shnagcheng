@@ -11,7 +11,7 @@ angular.module('myApp.home',[]).config(['$stateProvider',function ($stateProvide
             }
         }
     });
-}]).controller('homeController',['$scope','$location','$ionicViewSwitcher','HttpFactory',function ($scope,$location,$ionicViewSwitcher,HttpFactory) {
+}]).controller('homeController',['$scope','$location','$ionicViewSwitcher','$ionicModal','$timeout','HttpFactory',function ($scope,$location,$ionicViewSwitcher,$ionicModal,$timeout,HttpFactory) {
     $scope.home = {
         bannumArray:[],
         goodsArray:[]
@@ -54,6 +54,28 @@ angular.module('myApp.home',[]).config(['$stateProvider',function ($stateProvide
         //跳转详情页
         $location.path('/homeDetail');
         $ionicViewSwitcher.nextDirection("forward");
-    }
+    };
+    //模态框
+    $ionicModal.fromTemplateUrl('modalCart.html',{
+        scope:$scope,
+        animation: 'slide-in-down'
+    }).then(function(modal) {
+        $scope.modal = modal;
+    });
+    var rongWidgetMinbtn = angular.element(document.getElementById('rong-widget-minbtn'));
+    $scope.openModal = function(goods) {
+        $scope.modal.show();
+        $scope.goods = goods;
+        rongWidgetMinbtn.css('display','none');
+    };
+    $scope.closeModal = function() {
+        $scope.modal.hide();
+        $timeout(function () {
+            rongWidgetMinbtn.css('display','block');
+        },300);
+    };
+    $scope.$on('$destroy',function () {
+        $scope.modal.remove();
+    });
 
 }]);

@@ -1,0 +1,102 @@
+.modal{
+    background-color: rgba(0,0,0,.3);
+}
+.modalCart{
+    width: 100%;
+    height: 50rem;
+    position: fixed;
+    bottom:20rem;
+}
+.modalMain{
+    width: 100%;
+    height: 20rem;
+    background-color: white;
+    position: fixed;
+    bottom:0;
+}
+.modalMainTop{
+    display: flex;
+    justify-content: space-between;
+    margin: 1.2rem 1rem .5rem 1rem;
+}
+.modalMainTop img{
+    height: 7.5rem;
+    margin-left: 1rem;
+}
+.modalMainTop .col-60{
+    padding-right:1rem ;
+}
+.modalMainTop .col-60 p{
+    margin-bottom: .5rem;
+}
+.modalMainTop .col-60 p:nth-child(1) {
+    height: 3.6rem;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    overflow: hidden;
+}
+.modalMainTop .col-60 p:nth-child(2){
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    color: red;
+}
+.modalMainTop .col-60 p:nth-child(3){
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+}
+.modalNum{
+    border-top:.1rem solid #dddddd;
+    height:5rem;
+}
+.modalNum .modalNumDiv{
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.modalNum .modalNumDiv .modalSpan{
+    height: 5rem;
+    margin-left: 2rem;
+    line-height: 5rem;
+}
+.modalNum .modalNumDiv div{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    margin-right: 3rem;
+}
+.modalNum .modalNumDiv div button{
+    height: 2rem;
+    border:none;
+    background-color: #ccc;
+    line-height: 2rem;
+    font-size: 3rem;
+    color: white;
+    width: 4rem;
+}
+.modalNum .modalNumDiv div input{
+    height: 2rem;
+    width: 4rem;
+    border-top:.1rem solid #ccc;
+    border-bottom:.1rem solid #ccc;
+    text-align: center;
+}
+.modalBtn{
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+}
+.modalBtn div{
+    border:none;
+    color: white;
+    width: 50%;
+    font-size: 1.6rem;
+    text-align: center;
+    line-height: 5rem;
+}
+.modalBtn div:nth-child(1){
+    background-color: #ff6b6a;
+}
+.modalBtn div:nth-child(2){
+    background-color: red;
+}

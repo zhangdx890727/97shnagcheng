@@ -54,16 +54,18 @@
 }
 .goodsList{
     margin: 0 .6rem;
-    background: #eeeeee;
 }
-.goods{
+.col-50{
     display: inline-block;
     height: 15.8rem;
-    width: 16.9rem;
-    margin: .6rem;
+    background-color: #eeeeee;
+    float: left;
+}
+.goods{
+    height: 15.8rem;
+    margin: .6rem .3rem;
     padding-top: 1rem;
     background-color: white;
-    float: left;
 }
 .goods .goodsPic{
     display: block;
@@ -76,7 +78,7 @@
 }
 .goodsNum{
     position: absolute;
-    bottom: -1.5rem;
+    bottom: -1.2rem;
     right:0;
 }
 .goodsNum img{
@@ -93,10 +95,6 @@
 .goodsPrice p span:nth-child(2){
     color: #999999;
 }
-
-
-
-
 /*轮播图>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 .topCarouselImg{
     height: 14.5rem;
@@ -131,10 +129,163 @@
     padding: 0;
     margin: 0;
 }
+html,body{
+    width: 100%;
+    height: 100%;
+}
 html{
     font-size: 62.5%;
+    -webkit-user-select:auto;
+}
+body,.scroll{
+    -webkit-user-select:auto;
 }
 
+/*客服按钮*/
+div #rong-conversation{
+left: 0;
+}
+.rongcloud-kefuBtnBox{
+height: 60px;
+width: 60px;
+border-radius: 50%;
+}
+.rongcloud-kefuBtn .rongcloud-people{
+display: none;
+}
+#rong-conversation{
+width: 300px;
+height: 800px;
+display: inline-block;
+}
+#rong-widget-minbtn{
+background:url("../images/service1.png") no-repeat  center/100%;
+}
+.rongcloud-kefuChat #header{
+background: #E60012;
+}
+.rongcloud-kefuChat .rongcloud-rong-header .rongcloud-toolBar .rongcloud-kefuChatBoxHide{
+    background: url("../images/icon.png");
+    background-position: -.9rem -92.8rem;
+    border-radius: 1rem;
+}
+.rongcloud-kefuChat .rongcloud-rong-header .rongcloud-toolBar .rongcloud-kefuChatBoxClose{
+    background: url("../images/icon.png");
+    background-position: -.85rem -59.1rem;
+    border-radius: 1rem;
+}
+
+
+.modal{
+    background-color: rgba(0,0,0,.3);
+}
+.modalCart{
+    width: 100%;
+    height: 50rem;
+    position: fixed;
+    bottom:20rem;
+}
+.modalMain{
+    width: 100%;
+    height: 20rem;
+    background-color: white;
+    position: fixed;
+    bottom:0;
+}
+.modalMainTop{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    margin: 1.2rem 1rem .5rem 1rem;
+}
+.modalMainTop img{
+    height: 7.5rem;
+    margin-left: 1rem;
+}
+.modalMainTop .col-60{
+    padding-right:1rem ;
+}
+.modalMainTop .col-60 p{
+    margin-bottom: .5rem;
+}
+.modalMainTop .col-60 p:nth-child(1) {
+    height: 3.6rem;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    overflow: hidden;
+}
+.modalMainTop .col-60 p:nth-child(2){
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    color: red;
+}
+.modalMainTop .col-60 p:nth-child(3){
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+}
+.modalNum{
+    border-top:.1rem solid #dddddd;
+    height:5rem;
+}
+.modalNum .modalNumDiv{
+    height: 5rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+}
+.modalNum .modalNumDiv .modalSpan{
+    height: 5rem;
+    margin-left: 2rem;
+    line-height: 5rem;
+}
+.modalNum .modalNumDiv div{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    margin-top: 1.5rem;
+    margin-right: 3rem;
+}
+.modalNum .modalNumDiv div button{
+    height: 2rem;
+    border:none;
+    background-color: #ccc;
+    line-height: 2rem;
+    font-size: 3rem;
+    color: white;
+    width: 4rem;
+}
+.modalNum .modalNumDiv div input{
+    height: 2rem;
+    width: 4rem;
+    border-top:.1rem solid #ccc;
+    border-bottom:.1rem solid #ccc;
+    text-align: center;
+}
+.modalBtn{
+    height: 5rem;
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack:justify;
+        justify-content:space-between;
+}
+.modalBtn div{
+    border:none;
+    color: white;
+    width: 50%;
+    font-size: 1.6rem;
+    text-align: center;
+    line-height: 5rem;
+}
+.modalBtn div:nth-child(1){
+    background-color: #ff6b6a;
+}
+.modalBtn div:nth-child(2){
+    background-color: red;
+}
 
 .tabs-icon-top .tabs{
     padding-top:0;

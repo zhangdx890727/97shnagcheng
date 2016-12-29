@@ -6,7 +6,7 @@ angular.module('myApp.httpFactory',[]).factory('HttpFactory',['$http','$q',funct
         getData:function (url,type) {
             if (url){
                 var promise = $q.defer();
-                url = "http://localhost:3000/?myUrl=" + encodeURIComponent(url);
+                // url = "http://localhost:3000/?myUrl=" + encodeURIComponent(url);
                 type = type ? type:"GET";
                 $http({
                     url:url,
@@ -14,7 +14,6 @@ angular.module('myApp.httpFactory',[]).factory('HttpFactory',['$http','$q',funct
                     timeout:20000
                 }).then(function (result) {
                     result = result.data;
-                    result = JSON.parse(result);
                     promise.resolve(result);
                 },function (err) {
                     promise.reject(err);

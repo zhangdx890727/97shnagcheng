@@ -1,7 +1,7 @@
 /**
  * Created by lx on 2016/12/26.
  */
-angular.module('myApp',['ionic','ngRoute','myApp.slideBox','myApp.httpFactory','myApp.tabs','myApp.home','myApp.integral','myApp.league','myApp.person','myApp.homeDetail']).config(['$stateProvider','$urlRouterProvider','$ionicConfigProvider',function ($stateProvider,$urlRouterProvider,$ionicConfigProvider) {
+angular.module('myApp',['ionic','myApp.slideBox','myApp.httpFactory','myApp.tabs','myApp.home','myApp.integral','myApp.league','myApp.person','myApp.homeDetail']).config(['$stateProvider','$urlRouterProvider','$ionicConfigProvider',function ($stateProvider,$urlRouterProvider,$ionicConfigProvider) {
     //安卓手机的适配问题
     $ionicConfigProvider.tabs.position('bottom');
     $ionicConfigProvider.tabs.style('standard');
@@ -29,7 +29,7 @@ angular.module('myApp.home',[]).config(['$stateProvider',function ($stateProvide
             }
         }
     });
-}]).controller('homeController',['$scope','$location','$ionicViewSwitcher','HttpFactory',function ($scope,$location,$ionicViewSwitcher,HttpFactory) {
+}]).controller('homeController',['$scope','$location','$ionicViewSwitcher','$ionicModal','$timeout','HttpFactory',function ($scope,$location,$ionicViewSwitcher,$ionicModal,$timeout,HttpFactory) {
     $scope.home = {
         bannumArray:[],
         goodsArray:[]
@@ -72,7 +72,29 @@ angular.module('myApp.home',[]).config(['$stateProvider',function ($stateProvide
         //跳转详情页
         $location.path('/homeDetail');
         $ionicViewSwitcher.nextDirection("forward");
-    }
+    };
+    //模态框
+    $ionicModal.fromTemplateUrl('modalCart.html',{
+        scope:$scope,
+        animation: 'slide-in-down'
+    }).then(function(modal) {
+        $scope.modal = modal;
+    });
+    var rongWidgetMinbtn = angular.element(document.getElementById('rong-widget-minbtn'));
+    $scope.openModal = function(goods) {
+        $scope.modal.show();
+        $scope.goods = goods;
+        rongWidgetMinbtn.css('display','none');
+    };
+    $scope.closeModal = function() {
+        $scope.modal.hide();
+        $timeout(function () {
+            rongWidgetMinbtn.css('display','block');
+        },300);
+    };
+    $scope.$on('$destroy',function () {
+        $scope.modal.remove();
+    });
 
 }]);
 /**
@@ -102,8 +124,73 @@ angular.module('myApp.integral',[]).config(['$stateProvider',function ($statePro
             }
         }
     });
-}]).controller('integralController',['$scope',function ($scope) {
+}]).controller('integralController',['$scope','$ionicModal','$ionicViewSwitcher','$location','$timeout','HttpFactory',function ($scope,$ionicModal,$ionicViewSwitcher,$location,$timeout,HttpFactory) {
+    $scope.integral = {
+        bannumArray:[],
+        goodsArray:[]
 
+    };
+
+    $scope.slidBox = true;
+    var loading = function () {
+        $scope.slidBox = false;
+        var url = "http://114.112.94.166/sunny/wap/api/getGoods";
+        HttpFactory.getData(url).then(function (result) {
+            console.log(result);
+            $scope.slidBox = true;
+            $scope.integral.bannumArray = [{imgsrc:'images/mine.png',title:'111111111'},{imgsrc:'images/mine.png',title:'111111111'},{imgsrc:'images/mine.png',title:'111111111'},{imgsrc:'images/mine.png',title:'111111111'},{imgsrc:'images/mine.png',title:'111111111'}];
+            console.log($scope.integral.bannumArray);
+            $scope.integral.goodsArray = result.goodsData;
+            console.log($scope.integral.goodsArray);
+        })
+    };
+    loading();
+
+    //下拉刷新
+    $scope.doRefresh = function () {
+        loading();
+        $scope.$broadcast('scroll.refreshComplete');
+    };
+
+    //上拉加载
+    $scope.isShowInfinite = true;
+    $scope.loadMore = function () {
+        url = "http://114.112.94.166/sunny/wap/api/getGoods";
+        HttpFactory.getData(url).then(function (result) {
+            $scope.integral.goodsArray = $scope.integral.goodsArray.concat(result.goodsData)
+        });
+        $scope.$broadcast('scroll.infiniteScrollComplete');
+    };
+
+    //跳转详情页
+    $scope.goToHomeDetail = function () {
+        //跳转详情页
+        $location.path('/homeDetail');
+        $ionicViewSwitcher.nextDirection("forward");
+    };
+    //模态框
+    $ionicModal.fromTemplateUrl('modalCart.html',{
+        scope:$scope,
+        animation: 'slide-in-down'
+    }).then(function(modal) {
+        $scope.modal = modal;
+    });
+    var rongWidgetMinbtn = angular.element(document.getElementById('rong-widget-minbtn'));
+    $scope.openModal = function(goods) {
+        $scope.modal.show();
+        $scope.goods = goods;
+        rongWidgetMinbtn.css('display','none');
+    };
+    $scope.closeModal = function() {
+        $scope.modal.hide();
+        $timeout(function () {
+            rongWidgetMinbtn.css('display','block');
+        },300);
+
+    };
+    $scope.$on('$destroy',function () {
+        $scope.modal.remove();
+    });
 }]);
 /**
  * Created by lx on 2016/12/27.
@@ -140,10 +227,60 @@ angular.module('myApp.person',[]).config(['$stateProvider',function ($stateProvi
 /**
  * Created by lx on 2016/12/26.
  */
-angular.module('myApp.tabs',[]).config(['$stateProvider',function ($stateProvider) {
+angular.module('myApp.tabs',['RongWebIMWidget']).config(['$stateProvider',function ($stateProvider) {
 
-}]).controller('tabsController',['$scope',function ($scope) {
+}]).controller('tabsController',['$scope','$rootScope','$state','RongCustomerService',function ($scope,$rootScope,$state,RongCustomerService) {
+        var dWidth = document.body.offsetWidth;
+        var dHeight = document.body.offsetHeight;
+        RongCustomerService.init({
+            appkey:"n19jmcy5n1aw9",
+            token:"5wPyilUqfiVCKuenjsJMSRqsXqSVwrXS3ow63aC1R0gP1PRKFnyhlYCqB/LQOY1KaZWOXMFfVTN6evEm15oPpg==",
+            customerServiceId:"KEFU148301012322381",
+            style:{
+                width:dWidth,
+                height:dHeight
+            },
+            position:RongCustomerService.Position.right,
+            reminder:" ",
+            onSuccess:function(){
+                //初始化完成
+                //设置客服按钮位置
+                var kf = angular.element(document.getElementById('rong-widget-minbtn'));
+                kf.css('bottom','80px');
+                kf.css('right','20px');
+                var rongSendBtn = angular.element(document.getElementById('rong-sendBtn'));
+                rongSendBtn.css('backgroundColor','#E60012');
+                var rongcloudKefuChat = angular.element(document.querySelector('.rongcloud-kefuChat'));
+                rongcloudKefuChat.css({'background':'url("../images/icon.png")','backgroundPosition':'-75px'});
+                kf.on('click',function () {
+                    $rootScope.hideTabs = true;
+                    // $state.reload();
+                    // $scope.openModal();
+                    // $state.go('rykf');
+                    // console.log(indexRY);
+                    // indexRY.style.position = 'absolute';
+                    // indexRY.style.height = '800px';
+                    // indexRY.style.width = '300px';
+                    // indexRY.style.backgroundColor = 'red';
+                    // document.body.removeChild(mm);
+                    // rongConversation.removeClass('ng-hide');
 
+                });
+
+                var minBtn = angular.element(document.getElementById('header').childNodes[1].childNodes[1]);
+                minBtn.on('click',function () {
+                    // $rootScope.hideTabs = false;
+                    // $state.reload();
+                });
+                RongWebIMWidget.onClose = function() {
+                    $rootScope.hideTabs = false;
+                    $state.reload();
+                };
+
+
+            }
+
+        });
 }]);
 /**
  * Created by lx on 2016/12/5.
@@ -153,7 +290,7 @@ angular.module('myApp.httpFactory',[]).factory('HttpFactory',['$http','$q',funct
         getData:function (url,type) {
             if (url){
                 var promise = $q.defer();
-                url = "http://localhost:3000/?myUrl=" + encodeURIComponent(url);
+                // url = "http://localhost:3000/?myUrl=" + encodeURIComponent(url);
                 type = type ? type:"GET";
                 $http({
                     url:url,
@@ -161,7 +298,6 @@ angular.module('myApp.httpFactory',[]).factory('HttpFactory',['$http','$q',funct
                     timeout:20000
                 }).then(function (result) {
                     result = result.data;
-                    result = JSON.parse(result);
                     promise.resolve(result);
                 },function (err) {
                     promise.reject(err);

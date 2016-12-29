@@ -39,23 +39,25 @@
             <div class="homeContentTop"><img src="images/Recommend.png" alt=""></div>
             <!--列表-->
             <div class="goodsList">
-                <div ng-repeat="goods in home.goodsArray" class="goods" ng-click="goToHomeDetail()">
-                    <!--图片-->
-                    <img class="goodsPic" ng-src="http://114.112.94.166{{goods.goods_introduction}}" alt="">
-                    <div class="goodsArg">
-                        <div class="goodsPrice">
-                            <!--名称-->
-                            <p>{{goods.goods_name}}</p>
-                            <!--价格-->
-                            <p>
-                                <span>￥{{goods.shop_price}}</span>
-                                <span><del>￥{{goods.market_price}}</del></span>
-                            </p>
-                        </div>
-                        <!--购物车-->
-                        <div class="goodsNum">
-                            <img ng-if="goods.goods_number" src="images/shop1.png" alt="">
-                            <img ng-if="!goods.goods_number" src="images/sellout.png" alt="">
+                <div ng-repeat="goods in home.goodsArray" class="col-50">
+                    <div class="goods">
+                        <!--图片-->
+                        <img class="goodsPic" ng-src="http://114.112.94.166{{goods.goods_introduction}}" alt=""  ng-click="goToHomeDetail()">
+                        <div class="goodsArg">
+                            <div class="goodsPrice">
+                                <!--名称-->
+                                <p>{{goods.goods_name}}</p>
+                                <!--价格-->
+                                <p>
+                                    <span>￥{{goods.shop_price}}</span>
+                                    <span><del>￥{{goods.market_price}}</del></span>
+                                </p>
+                            </div>
+                            <!--购物车-->
+                            <div class="goodsNum">
+                                <img ng-if="goods.goods_number" src="images/shop1.png" alt="" ng-click="openModal(goods)">
+                                <img ng-if="!goods.goods_number" src="images/sellout.png" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
