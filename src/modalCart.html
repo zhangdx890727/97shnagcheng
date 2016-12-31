@@ -16,21 +16,17 @@
             <div class="modalNumDiv">
                 <span class="modalSpan">数量</span>
                 <div>
-                    <button>-</button>
-                    <input type="text" value="1">
-                    <button>+</button>
+                    <button ng-click="reduceBtn()">-</button>
+                    <input type="text" id="modalCartInput" readonly ng-model="number">
+                    <button ng-click="addBtn()">+</button>
                 </div>
             </div>
         </div>
 
         <div class="modalBtn">
-            <div>加入购物车</div>
-            <div>立即购买</div>
+            <div ng-click="addToShopCart()">加入购物车</div>
+            <div ng-click="purchaseNow()">立即购买</div>
         </div>
-
-
     </div>
-
-
 
 </div>

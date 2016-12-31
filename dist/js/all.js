@@ -43,7 +43,7 @@ angular.module('myApp.home',[]).config(['$stateProvider',function ($stateProvide
         HttpFactory.getData(url).then(function (result) {
             console.log(result);
             $scope.slidBox = true;
-            $scope.home.bannumArray = [{imgsrc:'images/mine.png',title:'111111111'},{imgsrc:'images/mine.png',title:'111111111'},{imgsrc:'images/mine.png',title:'111111111'},{imgsrc:'images/mine.png',title:'111111111'},{imgsrc:'images/mine.png',title:'111111111'}];
+            $scope.home.bannumArray = result.bannerData;
             console.log($scope.home.bannumArray);
             $scope.home.goodsArray = result.goodsData;
             console.log($scope.home.goodsArray);
@@ -74,13 +74,23 @@ angular.module('myApp.home',[]).config(['$stateProvider',function ($stateProvide
         $ionicViewSwitcher.nextDirection("forward");
     };
     //模态框
+    var rongWidgetMinbtn = angular.element(document.getElementById('rong-widget-minbtn'));
+    $scope.number = 1;
+    $scope.addBtn = function () {
+        $scope.number++;
+    };
+    $scope.reduceBtn = function () {
+        $scope.number--;
+        if($scope.number <= 1){
+            $scope.number = 1;
+        }
+    };
     $ionicModal.fromTemplateUrl('modalCart.html',{
         scope:$scope,
         animation: 'slide-in-down'
     }).then(function(modal) {
         $scope.modal = modal;
     });
-    var rongWidgetMinbtn = angular.element(document.getElementById('rong-widget-minbtn'));
     $scope.openModal = function(goods) {
         $scope.modal.show();
         $scope.goods = goods;
@@ -95,6 +105,20 @@ angular.module('myApp.home',[]).config(['$stateProvider',function ($stateProvide
     $scope.$on('$destroy',function () {
         $scope.modal.remove();
     });
+    $scope.doSearch = function (searchValue) {
+        if (searchValue){
+            console.log("搜索关键字为："+searchValue);
+        }else {
+            console.log("搜索值为空")
+        }
+    };
+    $scope.addToShopCart = function () {
+        console.log('加入购物车')
+    };
+    $scope.purchaseNow = function () {
+        console.log('立即购买')
+    }
+
 
 }]);
 /**
@@ -138,7 +162,7 @@ angular.module('myApp.integral',[]).config(['$stateProvider',function ($statePro
         HttpFactory.getData(url).then(function (result) {
             console.log(result);
             $scope.slidBox = true;
-            $scope.integral.bannumArray = [{imgsrc:'images/mine.png',title:'111111111'},{imgsrc:'images/mine.png',title:'111111111'},{imgsrc:'images/mine.png',title:'111111111'},{imgsrc:'images/mine.png',title:'111111111'},{imgsrc:'images/mine.png',title:'111111111'}];
+            $scope.integral.bannumArray = result.bannerData;
             console.log($scope.integral.bannumArray);
             $scope.integral.goodsArray = result.goodsData;
             console.log($scope.integral.goodsArray);
@@ -169,13 +193,26 @@ angular.module('myApp.integral',[]).config(['$stateProvider',function ($statePro
         $ionicViewSwitcher.nextDirection("forward");
     };
     //模态框
+    var rongWidgetMinbtn = angular.element(document.getElementById('rong-widget-minbtn'));
+    $scope.number = 1;
+    $scope.addBtn = function () {
+        $scope.number++;
+        if($scope.number >= $scope.goods.goods_number){
+            $scope.number = $scope.goods.goods_number;
+        }
+    };
+    $scope.reduceBtn = function () {
+        $scope.number--;
+        if($scope.number <= 1){
+            $scope.number = 1;
+        }
+    };
     $ionicModal.fromTemplateUrl('modalCart.html',{
         scope:$scope,
         animation: 'slide-in-down'
     }).then(function(modal) {
         $scope.modal = modal;
     });
-    var rongWidgetMinbtn = angular.element(document.getElementById('rong-widget-minbtn'));
     $scope.openModal = function(goods) {
         $scope.modal.show();
         $scope.goods = goods;
@@ -186,11 +223,23 @@ angular.module('myApp.integral',[]).config(['$stateProvider',function ($statePro
         $timeout(function () {
             rongWidgetMinbtn.css('display','block');
         },300);
-
     };
     $scope.$on('$destroy',function () {
         $scope.modal.remove();
     });
+    $scope.doSearch = function (searchValue) {
+        if (searchValue){
+            console.log("搜索关键字为："+searchValue);
+        }else {
+            console.log("搜索值为空")
+        }
+    };
+    $scope.addToShopCart = function () {
+        console.log('加入购物车')
+    };
+    $scope.purchaseNow = function () {
+        console.log('立即购买')
+    }
 }]);
 /**
  * Created by lx on 2016/12/27.
@@ -247,9 +296,9 @@ angular.module('myApp.tabs',['RongWebIMWidget']).config(['$stateProvider',functi
                 //设置客服按钮位置
                 var kf = angular.element(document.getElementById('rong-widget-minbtn'));
                 kf.css('bottom','80px');
-                kf.css('right','20px');
+                kf.css('right','30px');
                 var rongSendBtn = angular.element(document.getElementById('rong-sendBtn'));
-                rongSendBtn.css('backgroundColor','#E60012');
+                rongSendBtn.css('backgroundColor','deepskyblue');
                 var rongcloudKefuChat = angular.element(document.querySelector('.rongcloud-kefuChat'));
                 rongcloudKefuChat.css({'background':'url("../images/icon.png")','backgroundPosition':'-75px'});
                 kf.on('click',function () {
@@ -264,23 +313,41 @@ angular.module('myApp.tabs',['RongWebIMWidget']).config(['$stateProvider',functi
                     // indexRY.style.backgroundColor = 'red';
                     // document.body.removeChild(mm);
                     // rongConversation.removeClass('ng-hide');
-
                 });
-
-                var minBtn = angular.element(document.getElementById('header').childNodes[1].childNodes[1]);
-                minBtn.on('click',function () {
-                    // $rootScope.hideTabs = false;
-                    // $state.reload();
-                });
+                // var minBtn = angular.element(document.getElementById('header').childNodes[1].childNodes[1]);
+                // minBtn.on('click',function () {
+                //     // $rootScope.hideTabs = false;
+                //     // $state.reload();
+                // });
                 RongWebIMWidget.onClose = function() {
                     $rootScope.hideTabs = false;
                     $state.reload();
                 };
-
-
             }
-
         });
+    $scope.$on('$stateChangeSuccess',function (evt,current) {
+        var BTN = angular.element(document.querySelector('#rong-widget-minbtn '));
+        switch (current.url){
+            case'/home':
+                BTN.css('display','block');
+                break;
+            case'/integral':
+                BTN.css('display','block');
+                break;
+            case'/homeDetail':
+                BTN.css('display','block');
+                break;
+            case'/league':
+                BTN.css('display','none');
+                break;
+            case'/person':
+                BTN.css('display','none');
+                break;
+            default:
+                BTN.css('display','none');
+                break;
+        }
+    })
 }]);
 /**
  * Created by lx on 2016/12/5.
@@ -335,14 +402,14 @@ angular.module('myApp.slideBox',[]).directive('mgSlideBox',[function () {
             // $scope.slideHasChanged = function (index) {
             //     lastSpan.innerText = $scope.sourceArray[index].title;
             // };
-            //页面刚加载出来的时候禁止滑动
-            // $ionicSlideBoxDelegate.$getByHandle('mainSlideBox').enableSlide(false);
-            // //拖拽轮播图的时候也要禁止底层的slideBox滑动
-            // $scope.drag = function (event) {
-            //     $ionicSlideBoxDelegate.$getByHandle('mainSlideBox').enableSlide(false);
-            //     //阻止事件冒泡
-            //     event.stopPropagation();
-            // };
+            // 页面刚加载出来的时候禁止滑动
+            $ionicSlideBoxDelegate.$getByHandle('mainSlideBox').enableSlide(false);
+            //拖拽轮播图的时候也要禁止底层的slideBox滑动
+            $scope.drag = function (event) {
+                $ionicSlideBoxDelegate.$getByHandle('mainSlideBox').enableSlide(false);
+                //阻止事件冒泡
+                event.stopPropagation();
+            };
 
         }],
         replace:true,

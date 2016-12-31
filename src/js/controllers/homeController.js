@@ -25,7 +25,7 @@ angular.module('myApp.home',[]).config(['$stateProvider',function ($stateProvide
         HttpFactory.getData(url).then(function (result) {
             console.log(result);
             $scope.slidBox = true;
-            $scope.home.bannumArray = [{imgsrc:'images/mine.png',title:'111111111'},{imgsrc:'images/mine.png',title:'111111111'},{imgsrc:'images/mine.png',title:'111111111'},{imgsrc:'images/mine.png',title:'111111111'},{imgsrc:'images/mine.png',title:'111111111'}];
+            $scope.home.bannumArray = result.bannerData;
             console.log($scope.home.bannumArray);
             $scope.home.goodsArray = result.goodsData;
             console.log($scope.home.goodsArray);
@@ -56,13 +56,23 @@ angular.module('myApp.home',[]).config(['$stateProvider',function ($stateProvide
         $ionicViewSwitcher.nextDirection("forward");
     };
     //模态框
+    var rongWidgetMinbtn = angular.element(document.getElementById('rong-widget-minbtn'));
+    $scope.number = 1;
+    $scope.addBtn = function () {
+        $scope.number++;
+    };
+    $scope.reduceBtn = function () {
+        $scope.number--;
+        if($scope.number <= 1){
+            $scope.number = 1;
+        }
+    };
     $ionicModal.fromTemplateUrl('modalCart.html',{
         scope:$scope,
         animation: 'slide-in-down'
     }).then(function(modal) {
         $scope.modal = modal;
     });
-    var rongWidgetMinbtn = angular.element(document.getElementById('rong-widget-minbtn'));
     $scope.openModal = function(goods) {
         $scope.modal.show();
         $scope.goods = goods;
@@ -77,5 +87,19 @@ angular.module('myApp.home',[]).config(['$stateProvider',function ($stateProvide
     $scope.$on('$destroy',function () {
         $scope.modal.remove();
     });
+    $scope.doSearch = function (searchValue) {
+        if (searchValue){
+            console.log("搜索关键字为："+searchValue);
+        }else {
+            console.log("搜索值为空")
+        }
+    };
+    $scope.addToShopCart = function () {
+        console.log('加入购物车')
+    };
+    $scope.purchaseNow = function () {
+        console.log('立即购买')
+    }
+
 
 }]);

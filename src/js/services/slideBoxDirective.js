@@ -26,14 +26,14 @@ angular.module('myApp.slideBox',[]).directive('mgSlideBox',[function () {
             // $scope.slideHasChanged = function (index) {
             //     lastSpan.innerText = $scope.sourceArray[index].title;
             // };
-            //页面刚加载出来的时候禁止滑动
-            // $ionicSlideBoxDelegate.$getByHandle('mainSlideBox').enableSlide(false);
-            // //拖拽轮播图的时候也要禁止底层的slideBox滑动
-            // $scope.drag = function (event) {
-            //     $ionicSlideBoxDelegate.$getByHandle('mainSlideBox').enableSlide(false);
-            //     //阻止事件冒泡
-            //     event.stopPropagation();
-            // };
+            // 页面刚加载出来的时候禁止滑动
+            $ionicSlideBoxDelegate.$getByHandle('mainSlideBox').enableSlide(false);
+            //拖拽轮播图的时候也要禁止底层的slideBox滑动
+            $scope.drag = function (event) {
+                $ionicSlideBoxDelegate.$getByHandle('mainSlideBox').enableSlide(false);
+                //阻止事件冒泡
+                event.stopPropagation();
+            };
 
         }],
         replace:true,

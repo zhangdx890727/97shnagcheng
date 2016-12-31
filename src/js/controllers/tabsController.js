@@ -21,9 +21,9 @@ angular.module('myApp.tabs',['RongWebIMWidget']).config(['$stateProvider',functi
                 //设置客服按钮位置
                 var kf = angular.element(document.getElementById('rong-widget-minbtn'));
                 kf.css('bottom','80px');
-                kf.css('right','20px');
+                kf.css('right','30px');
                 var rongSendBtn = angular.element(document.getElementById('rong-sendBtn'));
-                rongSendBtn.css('backgroundColor','#E60012');
+                rongSendBtn.css('backgroundColor','deepskyblue');
                 var rongcloudKefuChat = angular.element(document.querySelector('.rongcloud-kefuChat'));
                 rongcloudKefuChat.css({'background':'url("../images/icon.png")','backgroundPosition':'-75px'});
                 kf.on('click',function () {
@@ -38,21 +38,39 @@ angular.module('myApp.tabs',['RongWebIMWidget']).config(['$stateProvider',functi
                     // indexRY.style.backgroundColor = 'red';
                     // document.body.removeChild(mm);
                     // rongConversation.removeClass('ng-hide');
-
                 });
-
-                var minBtn = angular.element(document.getElementById('header').childNodes[1].childNodes[1]);
-                minBtn.on('click',function () {
-                    // $rootScope.hideTabs = false;
-                    // $state.reload();
-                });
+                // var minBtn = angular.element(document.getElementById('header').childNodes[1].childNodes[1]);
+                // minBtn.on('click',function () {
+                //     // $rootScope.hideTabs = false;
+                //     // $state.reload();
+                // });
                 RongWebIMWidget.onClose = function() {
                     $rootScope.hideTabs = false;
                     $state.reload();
                 };
-
-
             }
-
         });
+    $scope.$on('$stateChangeSuccess',function (evt,current) {
+        var BTN = angular.element(document.querySelector('#rong-widget-minbtn '));
+        switch (current.url){
+            case'/home':
+                BTN.css('display','block');
+                break;
+            case'/integral':
+                BTN.css('display','block');
+                break;
+            case'/homeDetail':
+                BTN.css('display','block');
+                break;
+            case'/league':
+                BTN.css('display','none');
+                break;
+            case'/person':
+                BTN.css('display','none');
+                break;
+            default:
+                BTN.css('display','none');
+                break;
+        }
+    })
 }]);
