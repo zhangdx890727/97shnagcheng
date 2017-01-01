@@ -11,6 +11,14 @@ angular.module('myApp.league',[]).config(['$stateProvider',function ($stateProvi
             }
         }
     });
-}]).controller('leagueController',['$scope',function ($scope) {
+}]).controller('leagueController',['$scope','HttpFactory',function ($scope,HttpFactory) {
+    var url = "http://114.112.94.166/sunny/wap/api/franchise";
+    HttpFactory.getData(url).then(function (result) {
+        $scope. leagueArray= result.data;
+        console.log($scope. leagueArray);
+    });
+
+
+
 
 }]);

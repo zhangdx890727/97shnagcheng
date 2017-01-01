@@ -1,0 +1,120 @@
+/*个人信息*/
+.personContent{
+    background-color: #eee;
+}
+.personInfo{
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    padding: 1.5rem;
+}
+.personInfo img{
+    width: 7.5rem;
+    height: 7.5rem;
+}
+.personInfo .infoNameBox{
+    margin-left: 2rem;
+}
+.personInfo .infoNameBox p{
+    font-size: 1.6rem;
+    margin-top: 2rem;
+}
+.personInfo .infoNameBox span{
+    font-size: 1.2rem;
+    color: gray;
+}
+/*订单和收藏*/
+.personOrderCollect{
+    background-color: white;
+    margin-top: .2rem;
+    padding: 1.5rem;
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    justify-content: space-between;
+}
+.personOrderCollect p{
+    color: #676767;
+}
+.personOrder{
+    width: 50%;
+    text-align: center;
+}
+.personOrder img{
+    width: 2rem;
+}
+.personCollect{
+    width: 50%;
+    text-align: center;
+}
+.personCollect img{
+    width: 2.5rem;
+}
+.personOrderCollect>div:nth-child(2){
+    width:.1rem;
+    height:5.2rem ;
+    background-color: #CACACA;
+}
+/*购物车*/
+.personShopping{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.personList{
+    background-color: white;
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.personList + .personList{
+    margin-top: .1rem;
+}
+.personConcern.personList{
+    margin-top: 1rem;
+}
+.personShopping .personShopIcon{
+    height: 2.1rem;
+    margin: 1.4rem 1.7rem;
+}
+.personIntegral .personIntegralIcon{
+    height: 2rem;
+    margin: 1.4rem 1.65rem;
+}
+.personAddress .personAddressIcon{
+    height: 2.3rem;
+    margin: 1.4rem 2rem;
+}
+.personPay .personPayIcon{
+    height: 2.1rem;
+    margin: 1.4rem 1.5rem;
+}
+.personConcern .personConcernIcon{
+    height: 1.9rem;
+    margin: 1.4rem 1.7rem;
+}
+.personShopText{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.personShopText p{
+    line-height: 5rem;
+}
+.personShopText img{
+    width: 1rem;
+    height: 1.6rem;
+    margin: 1.8rem;
+}
+.personShopText div{
+    height: 5rem;
+    display: flex;
+}
+.personShopText div span{
+    height: 5rem;
+    line-height: 5rem;
+    color: #999;
+
+}
+
+

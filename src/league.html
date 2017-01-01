@@ -1,7 +1,26 @@
 <ion-view>
+    <div class="leagueTop">
+        <p>
+            <span class="icon ion-ios-location"></span>
+            <span>郑州</span>
+        </p>
+    </div>
 
+    <div class="QRcode">
+        <img src="images/paymoney.png" alt="">
+    </div>
 
     <ion-content>
-        <h1>加盟店</h1>
+        <div ng-repeat="league in leagueArray" class="leagueContent">
+            <img ng-src="http://114.112.94.166{{league.litpic}}" alt="">
+            <p>{{league.title}}</p>
+            <p>地址：{{league.province}}{{league.city}}{{league.district}}{{league.address}}</p>
+            <p>电话：{{league.mobile}}</p>
+        </div>
+
+
+
+
+
     </ion-content>
 </ion-view>

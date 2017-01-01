@@ -1,7 +1,7 @@
 /**
  * Created by lx on 2016/12/26.
  */
-angular.module('myApp',['ionic','myApp.slideBox','myApp.httpFactory','myApp.tabs','myApp.home','myApp.integral','myApp.league','myApp.person','myApp.homeDetail']).config(['$stateProvider','$urlRouterProvider','$ionicConfigProvider',function ($stateProvider,$urlRouterProvider,$ionicConfigProvider) {
+angular.module('myApp',['ionic','myApp.slideBox','myApp.httpFactory','myApp.tabs','myApp.home','myApp.integral','myApp.league','myApp.person','myApp.homeDetail','myApp.personOrder','myApp.personCollect','myApp.personShoppingCar','myApp.personIntegral','myApp.personAddress','myApp.personPay','myApp.personConcern']).config(['$stateProvider','$urlRouterProvider','$ionicConfigProvider',function ($stateProvider,$urlRouterProvider,$ionicConfigProvider) {
     //安卓手机的适配问题
     $ionicConfigProvider.tabs.position('bottom');
     $ionicConfigProvider.tabs.style('standard');
@@ -254,8 +254,60 @@ angular.module('myApp.league',[]).config(['$stateProvider',function ($stateProvi
             }
         }
     });
-}]).controller('leagueController',['$scope',function ($scope) {
+}]).controller('leagueController',['$scope','HttpFactory',function ($scope,HttpFactory) {
+    var url = "http://114.112.94.166/sunny/wap/api/franchise";
+    HttpFactory.getData(url).then(function (result) {
+        $scope. leagueArray= result.data;
+        console.log($scope. leagueArray);
+    });
 
+
+
+
+}]);
+/**
+ * Created by lx on 2017/1/1.
+ */
+angular.module('myApp.personAddress',[]).config(['$stateProvider',function ($stateProvider) {
+    $stateProvider.state('personAddress',{
+        url:'/personAddress',
+        templateUrl:'personAddress.html',
+        controller:'personAddressController'
+    })
+}]).controller('personAddressController',['$scope',function ($scope) {
+
+    $scope.goBack = function () {
+        window.history.go(-1);
+    }
+}]);
+/**
+ * Created by lx on 2017/1/1.
+ */
+angular.module('myApp.personCollect',[]).config(['$stateProvider',function ($stateProvider) {
+    $stateProvider.state('personCollect',{
+        url:'/personCollect',
+        templateUrl:'personCollect.html',
+        controller:'personCollectController'
+    })
+}]).controller('personCollectController',['$scope',function ($scope) {
+    $scope.goBack = function () {
+        window.history.go(-1);
+    }
+}]);
+/**
+ * Created by lx on 2017/1/1.
+ */
+angular.module('myApp.personConcern',[]).config(['$stateProvider',function ($stateProvider) {
+    $stateProvider.state('personConcern',{
+        url:'/personConcern',
+        templateUrl:'personConcern.html',
+        controller:'personConcernController'
+    })
+}]).controller('personConcernController',['$scope',function ($scope) {
+
+    $scope.goBack = function () {
+        window.history.go(-1);
+    }
 }]);
 /**
  * Created by lx on 2016/12/27.
@@ -270,8 +322,106 @@ angular.module('myApp.person',[]).config(['$stateProvider',function ($stateProvi
             }
         }
     });
-}]).controller('personController',['$scope',function ($scope) {
+}]).controller('personController',['$scope','$state','$ionicViewSwitcher',function ($scope,$state,$ionicViewSwitcher) {
+    $scope.person = {
+        userName:'你有梦想吗?',
+        creditNum:'3800'
+    };
+    $scope.showOrder = function () {
+        $state.go('personOrder');
+        $ionicViewSwitcher.nextDirection("forward");
+        console.log('我的订单')
+    };
+    $scope.showCollect = function () {
+        $state.go('personCollect');
+        $ionicViewSwitcher.nextDirection("forward");
+        console.log('我的收藏')
+    };
+    $scope.showShoppingCar = function () {
+        $state.go('personShoppingCar');
+        $ionicViewSwitcher.nextDirection("forward");
+        console.log('我的购物车')
+    };
+    $scope.showIntegral = function () {
+        $state.go('personIntegral');
+        $ionicViewSwitcher.nextDirection("forward");
+        console.log('我的积分')
+    };
+    $scope.showAddress = function () {
+        $state.go('personAddress');
+        $ionicViewSwitcher.nextDirection("forward");
+        console.log('我的收货地址')
+    };
+    $scope.showPay = function () {
+        $state.go('personPay');
+        $ionicViewSwitcher.nextDirection("forward");
+        console.log('我的支付记录')
+    };
+    $scope.showConcern = function () {
+        $state.go('personConcern');
+        $ionicViewSwitcher.nextDirection("forward");
+        console.log('我的推荐')
+    };
+}]);
 
+/**
+ * Created by lx on 2017/1/1.
+ */
+angular.module('myApp.personIntegral',[]).config(['$stateProvider',function ($stateProvider) {
+    $stateProvider.state('personIntegral',{
+        url:'/personIntegral',
+        templateUrl:'personIntegral.html',
+        controller:'personIntegralController'
+    })
+}]).controller('personIntegralController',['$scope',function ($scope) {
+
+    $scope.goBack = function () {
+        window.history.go(-1);
+    }
+}]);
+/**
+ * Created by lx on 2017/1/1.
+ */
+angular.module('myApp.personOrder',[]).config(['$stateProvider',function ($stateProvider) {
+    $stateProvider.state('personOrder',{
+        url:'/personOrder',
+        templateUrl:'personOrder.html',
+        controller:'personOrderController'
+    })
+}]).controller('personOrderController',['$scope',function ($scope) {
+
+    $scope.goBack = function () {
+        window.history.go(-1);
+    }
+}]);
+/**
+ * Created by lx on 2017/1/1.
+ */
+angular.module('myApp.personPay',[]).config(['$stateProvider',function ($stateProvider) {
+    $stateProvider.state('personPay',{
+        url:'/personPay',
+        templateUrl:'personPay.html',
+        controller:'personPayController'
+    })
+}]).controller('personPayController',['$scope',function ($scope) {
+
+    $scope.goBack = function () {
+        window.history.go(-1);
+    }
+}]);
+/**
+ * Created by lx on 2017/1/1.
+ */
+angular.module('myApp.personShoppingCar',[]).config(['$stateProvider',function ($stateProvider) {
+    $stateProvider.state('personShoppingCar',{
+        url:'/personShoppingCar',
+        templateUrl:'personShoppingCar.html',
+        controller:'personShoppingCarController'
+    })
+}]).controller('personShoppingCarController',['$scope',function ($scope) {
+    $scope.goBack = function () {
+        window.history.go(-1);
+    }
 }]);
 /**
  * Created by lx on 2016/12/26.
