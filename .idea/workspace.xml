@@ -2,42 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f2f845e-9af9-4da6-a3d3-bf36a43fb9a1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/addressDelete.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/addressEdit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/address_chooseGray.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/address_chooseRed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/addressModal.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/css/personIntegral.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/address.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/collect.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/concern.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/credit.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/numsArrow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/order.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/pay.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/paymoney.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/shoppingCar.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/css/league.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/css/person.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/controllers/personCollectController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/controllers/personIntegralController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/controllers/personOrderController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/controllers/personShoppingCarController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/personAddress.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/personCollect.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/personConcern.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/personIntegral.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/personOrder.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/personPay.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/personShoppingCar.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/main.css" afterPath="$PROJECT_DIR$/dist/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/main.min.css" afterPath="$PROJECT_DIR$/dist/css/main.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/home.html" afterPath="$PROJECT_DIR$/dist/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/all.js" afterPath="$PROJECT_DIR$/dist/js/all.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/all.min.js" afterPath="$PROJECT_DIR$/dist/js/all.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/personAddress.html" afterPath="$PROJECT_DIR$/dist/personAddress.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/personIntegral.html" afterPath="$PROJECT_DIR$/dist/personIntegral.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/personPay.html" afterPath="$PROJECT_DIR$/dist/personPay.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/tabs.html" afterPath="$PROJECT_DIR$/dist/tabs.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/home.css" afterPath="$PROJECT_DIR$/src/css/home.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/home.html" afterPath="$PROJECT_DIR$/src/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/integral.html" afterPath="$PROJECT_DIR$/src/integral.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/league.html" afterPath="$PROJECT_DIR$/dist/league.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/person.html" afterPath="$PROJECT_DIR$/dist/person.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/app.js" afterPath="$PROJECT_DIR$/src/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/homeController.js" afterPath="$PROJECT_DIR$/src/js/controllers/homeController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/integralController.js" afterPath="$PROJECT_DIR$/src/js/controllers/integralController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/leagueController.js" afterPath="$PROJECT_DIR$/src/js/controllers/leagueController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/personAddressController.js" afterPath="$PROJECT_DIR$/src/js/controllers/personAddressController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/personCollectController.js" afterPath="$PROJECT_DIR$/src/js/controllers/personCollectController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/personConcernController.js" afterPath="$PROJECT_DIR$/src/js/controllers/personConcernController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/personController.js" afterPath="$PROJECT_DIR$/src/js/controllers/personController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/personIntegralController.js" afterPath="$PROJECT_DIR$/src/js/controllers/personIntegralController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/personOrderController.js" afterPath="$PROJECT_DIR$/src/js/controllers/personOrderController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/personPayController.js" afterPath="$PROJECT_DIR$/src/js/controllers/personPayController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/personShoppingCarController.js" afterPath="$PROJECT_DIR$/src/js/controllers/personShoppingCarController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/tabsController.js" afterPath="$PROJECT_DIR$/src/js/controllers/tabsController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/personAddress.html" afterPath="$PROJECT_DIR$/src/personAddress.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/personIntegral.html" afterPath="$PROJECT_DIR$/src/personIntegral.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/personPay.html" afterPath="$PROJECT_DIR$/src/personPay.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tabs.html" afterPath="$PROJECT_DIR$/src/tabs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/league.html" afterPath="$PROJECT_DIR$/src/league.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/person.html" afterPath="$PROJECT_DIR$/src/person.html" />
     </list>
     <ignored path="个人项目.iws" />
     <ignored path=".idea/workspace.xml" />
