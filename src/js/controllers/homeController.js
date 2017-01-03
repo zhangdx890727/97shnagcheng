@@ -11,13 +11,11 @@ angular.module('myApp.home',[]).config(['$stateProvider',function ($stateProvide
             }
         }
     });
-}]).controller('homeController',['$scope','$location','$ionicViewSwitcher','$ionicModal','$timeout','HttpFactory',function ($scope,$location,$ionicViewSwitcher,$ionicModal,$timeout,HttpFactory) {
+}]).controller('homeController',['$scope','$location','$ionicViewSwitcher','$ionicModal','$timeout','$rootScope','HttpFactory',function ($scope,$location,$ionicViewSwitcher,$ionicModal,$timeout,$rootScope,HttpFactory) {
     $scope.home = {
         bannumArray:[],
         goodsArray:[]
-
     };
-
     $scope.slidBox = true;
     var loading = function () {
         $scope.slidBox = false;

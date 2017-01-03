@@ -2,40 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f2f845e-9af9-4da6-a3d3-bf36a43fb9a1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/address.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/collect.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/concern.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/credit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/numsArrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/order.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/pay.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/paymoney.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/shoppingCar.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/css/league.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/css/person.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/controllers/personCollectController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/controllers/personIntegralController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/controllers/personOrderController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/controllers/personShoppingCarController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/personAddress.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/personCollect.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/personConcern.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/personIntegral.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/personOrder.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/personPay.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/personShoppingCar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/addressDelete.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/addressEdit.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/address_chooseGray.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/address_chooseRed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/addressModal.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/css/personIntegral.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/main.css" afterPath="$PROJECT_DIR$/dist/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/main.min.css" afterPath="$PROJECT_DIR$/dist/css/main.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/home.html" afterPath="$PROJECT_DIR$/dist/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/all.js" afterPath="$PROJECT_DIR$/dist/js/all.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/all.min.js" afterPath="$PROJECT_DIR$/dist/js/all.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/league.html" afterPath="$PROJECT_DIR$/dist/league.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/person.html" afterPath="$PROJECT_DIR$/dist/person.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/personAddress.html" afterPath="$PROJECT_DIR$/dist/personAddress.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/personIntegral.html" afterPath="$PROJECT_DIR$/dist/personIntegral.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/personPay.html" afterPath="$PROJECT_DIR$/dist/personPay.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/tabs.html" afterPath="$PROJECT_DIR$/dist/tabs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/home.css" afterPath="$PROJECT_DIR$/src/css/home.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/home.html" afterPath="$PROJECT_DIR$/src/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/integral.html" afterPath="$PROJECT_DIR$/src/integral.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/app.js" afterPath="$PROJECT_DIR$/src/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/homeController.js" afterPath="$PROJECT_DIR$/src/js/controllers/homeController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/integralController.js" afterPath="$PROJECT_DIR$/src/js/controllers/integralController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/leagueController.js" afterPath="$PROJECT_DIR$/src/js/controllers/leagueController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/personAddressController.js" afterPath="$PROJECT_DIR$/src/js/controllers/personAddressController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/personCollectController.js" afterPath="$PROJECT_DIR$/src/js/controllers/personCollectController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/personConcernController.js" afterPath="$PROJECT_DIR$/src/js/controllers/personConcernController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/personController.js" afterPath="$PROJECT_DIR$/src/js/controllers/personController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/league.html" afterPath="$PROJECT_DIR$/src/league.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/person.html" afterPath="$PROJECT_DIR$/src/person.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/personIntegralController.js" afterPath="$PROJECT_DIR$/src/js/controllers/personIntegralController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/personOrderController.js" afterPath="$PROJECT_DIR$/src/js/controllers/personOrderController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/personPayController.js" afterPath="$PROJECT_DIR$/src/js/controllers/personPayController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/personShoppingCarController.js" afterPath="$PROJECT_DIR$/src/js/controllers/personShoppingCarController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/controllers/tabsController.js" afterPath="$PROJECT_DIR$/src/js/controllers/tabsController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/personAddress.html" afterPath="$PROJECT_DIR$/src/personAddress.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/personIntegral.html" afterPath="$PROJECT_DIR$/src/personIntegral.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/personPay.html" afterPath="$PROJECT_DIR$/src/personPay.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tabs.html" afterPath="$PROJECT_DIR$/src/tabs.html" />
     </list>
     <ignored path="个人项目.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,32 +63,8 @@
       <file leaf-file-name="personController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/controllers/personController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="35" column="52" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="52" />
-              <folding>
-                <element signature="e#0#39#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="personConcernController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/controllers/personConcernController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#37#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
+            <state relative-caret-position="210">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding>
                 <element signature="e#0#39#0" expanded="false" />
               </folding>
@@ -97,76 +75,99 @@
       <file leaf-file-name="personOrderController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/controllers/personOrderController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="14" selection-end-column="4" />
+            <state relative-caret-position="450">
+              <caret line="17" column="7" selection-start-line="15" selection-start-column="4" selection-end-line="17" selection-end-column="7" />
               <folding>
                 <element signature="e#0#37#0" expanded="false" />
+                <marker date="1483412742346" expanded="true" signature="417:573" ph="[...]" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="personPayController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/controllers/personPayController.js">
+      <file leaf-file-name="homeController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/controllers/homeController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="32" />
+            <state relative-caret-position="450">
+              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
               <folding>
-                <element signature="e#0#37#0" expanded="false" />
+                <element signature="e#0#39#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="personAddressController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/controllers/personAddressController.js">
+      <file leaf-file-name="leagueController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/controllers/leagueController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="36" />
+            <state relative-caret-position="450">
+              <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
               <folding>
-                <element signature="e#0#37#0" expanded="false" />
+                <element signature="e#0#39#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="personIntegralController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/controllers/personIntegralController.js">
+      <file leaf-file-name="tabsController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/controllers/tabsController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="36" />
+            <state relative-caret-position="1">
+              <caret line="36" column="53" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="53" />
               <folding>
-                <element signature="e#0#37#0" expanded="false" />
+                <element signature="e#0#39#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="personPay.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/personPay.html">
+      <file leaf-file-name="integralController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/controllers/integralController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+            <state relative-caret-position="630">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#39#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/css/home.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="62" column="1" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="personIntegral.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/personIntegral.html">
+      <file leaf-file-name="integral.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/integral.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+            <state relative-caret-position="660">
+              <caret line="61" column="26" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="personShoppingCar.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/personShoppingCar.html">
+      <file leaf-file-name="personIntegral.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/css/personIntegral.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+            <state relative-caret-position="480">
+              <caret line="217" column="1" selection-start-line="217" selection-start-column="1" selection-end-line="217" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="41" column="71" selection-start-line="41" selection-start-column="65" selection-end-line="41" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -177,9 +178,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="CSS File" />
         <option value="HTML File" />
-        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -197,47 +198,49 @@
         <option value="$PROJECT_DIR$/dist/css/main.css" />
         <option value="$PROJECT_DIR$/src/css/tabs.css" />
         <option value="$PROJECT_DIR$/src/js/services/searchDirective.js" />
-        <option value="$PROJECT_DIR$/src/tabs.html" />
         <option value="$PROJECT_DIR$/src/js/controllers/homeDetailController.js" />
         <option value="$PROJECT_DIR$/dist/index.html" />
         <option value="$PROJECT_DIR$/src/homeDetail.html" />
         <option value="$PROJECT_DIR$/src/js/services/httpFactory.js" />
         <option value="$PROJECT_DIR$/src/modal.html" />
         <option value="$PROJECT_DIR$/src/css/modalCart.css" />
-        <option value="$PROJECT_DIR$/src/integral.html" />
         <option value="$PROJECT_DIR$/src/js/controllers/modalCartController.js" />
         <option value="$PROJECT_DIR$/src/js/services/slideBoxDirective.js" />
         <option value="$PROJECT_DIR$/src/slideBox.html" />
         <option value="$PROJECT_DIR$/src/js/services/modalCartDirective.js" />
         <option value="$PROJECT_DIR$/src/modalCart.html" />
-        <option value="$PROJECT_DIR$/src/home.html" />
-        <option value="$PROJECT_DIR$/src/js/controllers/homeController.js" />
-        <option value="$PROJECT_DIR$/src/js/controllers/integralController.js" />
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/css/main.css" />
-        <option value="$PROJECT_DIR$/src/js/controllers/tabsController.js" />
-        <option value="$PROJECT_DIR$/src/css/home.css" />
         <option value="$PROJECT_DIR$/src/league.html" />
         <option value="$PROJECT_DIR$/src/css/league.css" />
-        <option value="$PROJECT_DIR$/src/js/controllers/leagueController.js" />
         <option value="$PROJECT_DIR$/src/css/person.css" />
         <option value="$PROJECT_DIR$/src/person.html" />
-        <option value="$PROJECT_DIR$/src/personOrder.html" />
-        <option value="$PROJECT_DIR$/src/js/controllers/personOrderController.js" />
         <option value="$PROJECT_DIR$/src/personCollect.html" />
-        <option value="$PROJECT_DIR$/src/js/controllers/personCollectController.js" />
-        <option value="$PROJECT_DIR$/src/js/controllers/personController.js" />
         <option value="$PROJECT_DIR$/src/personShoppingCar.html" />
-        <option value="$PROJECT_DIR$/src/js/controllers/personShoppingCarController.js" />
-        <option value="$PROJECT_DIR$/src/personAddress.html" />
-        <option value="$PROJECT_DIR$/src/personPay.html" />
         <option value="$PROJECT_DIR$/src/personConcern.html" />
+        <option value="$PROJECT_DIR$/src/personOrder.html" />
         <option value="$PROJECT_DIR$/src/personIntegral.html" />
-        <option value="$PROJECT_DIR$/src/js/controllers/personIntegralController.js" />
-        <option value="$PROJECT_DIR$/src/js/controllers/personAddressController.js" />
-        <option value="$PROJECT_DIR$/src/js/controllers/personPayController.js" />
-        <option value="$PROJECT_DIR$/src/js/controllers/personConcernController.js" />
+        <option value="$PROJECT_DIR$/src/personAddress.html" />
+        <option value="$PROJECT_DIR$/src/addressModal.html" />
+        <option value="$PROJECT_DIR$/src/personPay.html" />
+        <option value="$PROJECT_DIR$/src/js/controllers/personShoppingCarController.js" />
+        <option value="$PROJECT_DIR$/src/tabs.html" />
         <option value="$PROJECT_DIR$/src/js/app.js" />
+        <option value="$PROJECT_DIR$/src/js/controllers/personAddressController.js" />
+        <option value="$PROJECT_DIR$/src/js/controllers/personCollectController.js" />
+        <option value="$PROJECT_DIR$/src/js/controllers/personConcernController.js" />
+        <option value="$PROJECT_DIR$/src/js/controllers/personIntegralController.js" />
+        <option value="$PROJECT_DIR$/src/js/controllers/personOrderController.js" />
+        <option value="$PROJECT_DIR$/src/js/controllers/personPayController.js" />
+        <option value="$PROJECT_DIR$/src/js/controllers/personController.js" />
+        <option value="$PROJECT_DIR$/src/js/controllers/tabsController.js" />
+        <option value="$PROJECT_DIR$/src/js/controllers/leagueController.js" />
+        <option value="$PROJECT_DIR$/src/js/controllers/homeController.js" />
+        <option value="$PROJECT_DIR$/src/js/controllers/integralController.js" />
+        <option value="$PROJECT_DIR$/src/css/personIntegral.css" />
+        <option value="$PROJECT_DIR$/src/home.html" />
+        <option value="$PROJECT_DIR$/src/css/home.css" />
+        <option value="$PROJECT_DIR$/src/integral.html" />
       </list>
     </option>
   </component>
@@ -248,8 +251,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-15" />
+    <option name="y" value="-2" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -278,6 +281,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -370,8 +375,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -463,24 +466,25 @@
       <workItem from="1482749752433" duration="4408000" />
       <workItem from="1482754260209" duration="49529000" />
       <workItem from="1482994286651" duration="39203000" />
-      <workItem from="1483174511938" duration="18782000" />
+      <workItem from="1483174511938" duration="19533000" />
+      <workItem from="1483268365636" duration="17356000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115814000" />
+    <option name="totallyTimeSpent" value="133921000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-15" y="-2" width="1936" height="1056" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11854584" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14752372" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988167" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1516793" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1516793" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -526,26 +530,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/css/tabs.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="48" column="1" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tabs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/mine.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/js/ionic.bundle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -607,18 +591,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/css/RongIMWidget.min.css" />
-    <entry file="file://$PROJECT_DIR$/src/integral.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60">
-          <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/controllers/modalCartController.js" />
     <entry file="file://$PROJECT_DIR$/src/slideBox.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -639,7 +615,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="93" column="23" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -654,27 +629,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/controllers/integralController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="98" column="6" selection-start-line="98" selection-start-column="6" selection-end-line="98" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/controllers/tabsController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="34" column="59" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -683,48 +637,6 @@
         <state relative-caret-position="228">
           <caret line="19" column="36" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="36" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/home.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="27" column="11" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1385">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="643" selection-start-line="0" selection-start-column="643" selection-end-line="0" selection-end-column="643" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/controllers/homeController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -740,17 +652,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/controllers/leagueController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -766,34 +667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="565">
           <caret line="53" column="67" selection-start-line="53" selection-start-column="56" selection-end-line="53" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/controllers/personCollectController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="13" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#37#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/controllers/personShoppingCarController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#37#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/personAddress.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -814,22 +687,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/personOrder.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" column="123" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="123" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/personPay.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/personShoppingCar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -838,58 +695,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/controllers/personOrderController.js">
+    <entry file="file://$PROJECT_DIR$/src/personOrder.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="14" selection-end-column="4" />
+        <state relative-caret-position="180">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
           <folding>
-            <element signature="e#0#37#0" expanded="false" />
+            <marker date="1483355368357" expanded="true" signature="9:205" ph="..." />
+            <marker date="1483355368357" expanded="true" signature="28:193" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/personIntegral.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        <state relative-caret-position="300">
+          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/controllers/personController.js">
+    <entry file="file://$PROJECT_DIR$/src/personAddress.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="35" column="52" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="52" />
+        <state relative-caret-position="960">
+          <caret line="32" column="65" selection-start-line="32" selection-start-column="65" selection-end-line="32" selection-end-column="65" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#span#0;n#span#0;n#div#2;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#span#1;n#span#0;n#div#2;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/addressModal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="15" column="74" selection-start-line="15" selection-start-column="74" selection-end-line="15" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/personPay.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2340">
+          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tabs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
             <element signature="e#0#39#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/controllers/personIntegralController.js">
+    <entry file="file://$PROJECT_DIR$/src/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="36" />
+        <state relative-caret-position="900">
+          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/controllers/personShoppingCarController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="11" column="9" selection-start-line="6" selection-start-column="8" selection-end-line="11" selection-end-column="9" />
           <folding>
             <element signature="e#0#37#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/controllers/personAddressController.js">
+    <entry file="file://$PROJECT_DIR$/src/js/controllers/personCollectController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#37#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/controllers/personPayController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="32" />
+        <state relative-caret-position="450">
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
           <folding>
             <element signature="e#0#37#0" expanded="false" />
           </folding>
@@ -898,21 +789,143 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/controllers/personConcernController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="36" />
+        <state relative-caret-position="480">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
           <folding>
             <element signature="e#0#37#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/app.js">
+    <entry file="file://$PROJECT_DIR$/src/js/controllers/personIntegralController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
+        <state relative-caret-position="540">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#37#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/controllers/personAddressController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="11" column="9" selection-start-line="6" selection-start-column="8" selection-end-line="11" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#37#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/controllers/personPayController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#37#0" expanded="false" />
+            <marker date="1483412790571" expanded="true" signature="405:561" ph="[...]" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/controllers/personOrderController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="17" column="7" selection-start-line="15" selection-start-column="4" selection-end-line="17" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#37#0" expanded="false" />
+            <marker date="1483412742346" expanded="true" signature="417:573" ph="[...]" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/controllers/tabsController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1">
+          <caret line="36" column="53" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="53" />
           <folding>
             <element signature="e#0#39#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/controllers/leagueController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/controllers/homeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/controllers/integralController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/personIntegral.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="217" column="1" selection-start-line="217" selection-start-column="1" selection-end-line="217" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="0" column="633" selection-start-line="0" selection-start-column="633" selection-end-line="0" selection-end-column="633" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/controllers/personController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="41" column="71" selection-start-line="41" selection-start-column="65" selection-end-line="41" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/home.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="62" column="1" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/integral.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="61" column="26" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>

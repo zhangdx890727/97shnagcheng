@@ -11,7 +11,7 @@ angular.module('myApp.league',[]).config(['$stateProvider',function ($stateProvi
             }
         }
     });
-}]).controller('leagueController',['$scope','HttpFactory',function ($scope,HttpFactory) {
+}]).controller('leagueController',['$scope','$rootScope','$timeout','HttpFactory',function ($scope,$rootScope,$timeout,HttpFactory) {
     var url = "http://114.112.94.166/sunny/wap/api/franchise";
     HttpFactory.getData(url).then(function (result) {
         $scope. leagueArray= result.data;

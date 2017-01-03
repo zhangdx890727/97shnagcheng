@@ -15,4 +15,22 @@ angular.module('myApp',['ionic','myApp.slideBox','myApp.httpFactory','myApp.tabs
     });
     //意外跳转
     $urlRouterProvider.otherwise('/tabs/home');
-}]);
+}])
+    .directive('showTabs', ['$rootScope',function ($rootScope) {
+    return {
+        restrict: 'EAC',
+        link: function ($scope, $el) {
+            console.log("hello");
+            $rootScope.hideTabs = false;
+        }
+    };
+}])
+    .directive('hideTabs', ['$rootScope',function ($rootScope) {
+        return {
+            restrict: 'EAC',
+            link: function ($scope, $el) {
+                $rootScope.hideTabs = true;
+
+            }
+        };
+    }]);

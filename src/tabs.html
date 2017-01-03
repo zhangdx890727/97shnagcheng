@@ -4,7 +4,7 @@
     <ion-side-menu-content>
 
         <!--底部导航条-->
-        <ion-tabs class="tabs-icon-top">
+        <ion-tabs class="tabs-icon-top" ng-class="{'tabs-item-hide': $root.hideTabs}">
 
             <ion-tab title="首页" icon-on="tabs-home-outline" icon-off="tabs-home" href="#/tabs/home">
                 <ion-nav-view name="tabs-home"></ion-nav-view>

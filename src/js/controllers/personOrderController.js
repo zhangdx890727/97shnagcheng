@@ -2,14 +2,18 @@
  * Created by lx on 2017/1/1.
  */
 angular.module('myApp.personOrder',[]).config(['$stateProvider',function ($stateProvider) {
-    $stateProvider.state('personOrder',{
+    $stateProvider.state('tabs.personOrder',{
         url:'/personOrder',
-        templateUrl:'personOrder.html',
-        controller:'personOrderController'
+        views:{
+            'tabs-person':{
+                templateUrl:'personOrder.html',
+                controller:'personOrderController'
+            }
+        }
     })
-}]).controller('personOrderController',['$scope',function ($scope) {
+}]).controller('personOrderController',['$scope','$rootScope',function ($scope,$rootScope) {
 
-    $scope.goBack = function () {
-        window.history.go(-1);
-    }
+    $scope.$on('$ionicView.beforeEnter', function () {
+        $rootScope.hideTabs = true;
+    });
 }]);

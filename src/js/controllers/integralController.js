@@ -11,11 +11,15 @@ angular.module('myApp.integral',[]).config(['$stateProvider',function ($statePro
             }
         }
     });
-}]).controller('integralController',['$scope','$ionicModal','$ionicViewSwitcher','$location','$timeout','HttpFactory',function ($scope,$ionicModal,$ionicViewSwitcher,$location,$timeout,HttpFactory) {
+}]).controller('integralController',['$scope','$ionicModal','$ionicViewSwitcher','$location','$timeout','$rootScope','HttpFactory',function ($scope,$ionicModal,$ionicViewSwitcher,$location,$timeout,$rootScope,HttpFactory) {
+    $scope.$on('$ionicView.beforeEnter', function () {
+        $timeout(function(){
+            $rootScope.hideTabs = false;
+        },300);
+    });
     $scope.integral = {
         bannumArray:[],
         goodsArray:[]
-
     };
 
     $scope.slidBox = true;

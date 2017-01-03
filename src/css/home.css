@@ -55,6 +55,7 @@
     margin: 0 .6rem;
 }
 .col-50{
+    width: 50%;
     display: inline-block;
     height: 15.8rem;
     background-color: #eeeeee;
@@ -114,7 +115,11 @@
 }
 .topCarousel .slider-pager-page{
     width: .6rem;
-    opacity: .1;
+    opacity: 1;
+    color: white;
+}
+.topCarousel .slider-pager-page.active{
+    width: .6rem;
     color: red;
 }
 .topCarousel .ion-record::before{

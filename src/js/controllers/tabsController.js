@@ -26,9 +26,9 @@ angular.module('myApp.tabs',['RongWebIMWidget']).config(['$stateProvider',functi
                 rongSendBtn.css('backgroundColor','deepskyblue');
                 var rongcloudKefuChat = angular.element(document.querySelector('.rongcloud-kefuChat'));
                 rongcloudKefuChat.css({'background':'url("../images/icon.png")','backgroundPosition':'-75px'});
-                kf.on('click',function () {
-                    $rootScope.hideTabs = true;
-                    // $state.reload();
+                // kf.on('click',function () {
+                //     $rootScope.hideTabs = true;
+                //     $state.reload();
                     // $scope.openModal();
                     // $state.go('rykf');
                     // console.log(indexRY);
@@ -38,16 +38,18 @@ angular.module('myApp.tabs',['RongWebIMWidget']).config(['$stateProvider',functi
                     // indexRY.style.backgroundColor = 'red';
                     // document.body.removeChild(mm);
                     // rongConversation.removeClass('ng-hide');
-                });
+                // });
                 // var minBtn = angular.element(document.getElementById('header').childNodes[1].childNodes[1]);
                 // minBtn.on('click',function () {
-                //     // $rootScope.hideTabs = false;
-                //     // $state.reload();
+                //     $rootScope.hideTabs = false;
+                //     $state.reload();
+                //     console.log('12345');
                 // });
-                RongWebIMWidget.onClose = function() {
-                    $rootScope.hideTabs = false;
-                    $state.reload();
-                };
+                // RongWebIMWidget.onClose = function() {
+                //     $rootScope.hideTabs = false;
+                //     console.log('12345');
+                //     $state.reload();
+                // };
             }
         });
     $scope.$on('$stateChangeSuccess',function (evt,current) {

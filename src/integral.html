@@ -46,7 +46,7 @@
                         <div class="goodsArg">
                             <div class="goodsPrice">
                                 <!--名称-->
-                                <p>{{goods.goods_name}}</p>
+                                <p>{{goods.goods_name | limitTo:9}}</p>
                                 <!--价格-->
                                 <p>
                                     <span>￥{{goods.shop_price}}</span>

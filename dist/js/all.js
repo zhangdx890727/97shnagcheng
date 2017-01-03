@@ -15,7 +15,25 @@ angular.module('myApp',['ionic','myApp.slideBox','myApp.httpFactory','myApp.tabs
     });
     //意外跳转
     $urlRouterProvider.otherwise('/tabs/home');
-}]);
+}])
+    .directive('showTabs', ['$rootScope',function ($rootScope) {
+    return {
+        restrict: 'EAC',
+        link: function ($scope, $el) {
+            console.log("hello");
+            $rootScope.hideTabs = false;
+        }
+    };
+}])
+    .directive('hideTabs', ['$rootScope',function ($rootScope) {
+        return {
+            restrict: 'EAC',
+            link: function ($scope, $el) {
+                $rootScope.hideTabs = true;
+
+            }
+        };
+    }]);
 /**
  * Created by lx on 2016/12/26.
  */
@@ -29,13 +47,11 @@ angular.module('myApp.home',[]).config(['$stateProvider',function ($stateProvide
             }
         }
     });
-}]).controller('homeController',['$scope','$location','$ionicViewSwitcher','$ionicModal','$timeout','HttpFactory',function ($scope,$location,$ionicViewSwitcher,$ionicModal,$timeout,HttpFactory) {
+}]).controller('homeController',['$scope','$location','$ionicViewSwitcher','$ionicModal','$timeout','$rootScope','HttpFactory',function ($scope,$location,$ionicViewSwitcher,$ionicModal,$timeout,$rootScope,HttpFactory) {
     $scope.home = {
         bannumArray:[],
         goodsArray:[]
-
     };
-
     $scope.slidBox = true;
     var loading = function () {
         $scope.slidBox = false;
@@ -148,11 +164,15 @@ angular.module('myApp.integral',[]).config(['$stateProvider',function ($statePro
             }
         }
     });
-}]).controller('integralController',['$scope','$ionicModal','$ionicViewSwitcher','$location','$timeout','HttpFactory',function ($scope,$ionicModal,$ionicViewSwitcher,$location,$timeout,HttpFactory) {
+}]).controller('integralController',['$scope','$ionicModal','$ionicViewSwitcher','$location','$timeout','$rootScope','HttpFactory',function ($scope,$ionicModal,$ionicViewSwitcher,$location,$timeout,$rootScope,HttpFactory) {
+    $scope.$on('$ionicView.beforeEnter', function () {
+        $timeout(function(){
+            $rootScope.hideTabs = false;
+        },300);
+    });
     $scope.integral = {
         bannumArray:[],
         goodsArray:[]
-
     };
 
     $scope.slidBox = true;
@@ -254,7 +274,7 @@ angular.module('myApp.league',[]).config(['$stateProvider',function ($stateProvi
             }
         }
     });
-}]).controller('leagueController',['$scope','HttpFactory',function ($scope,HttpFactory) {
+}]).controller('leagueController',['$scope','$rootScope','$timeout','HttpFactory',function ($scope,$rootScope,$timeout,HttpFactory) {
     var url = "http://114.112.94.166/sunny/wap/api/franchise";
     HttpFactory.getData(url).then(function (result) {
         $scope. leagueArray= result.data;
@@ -269,45 +289,120 @@ angular.module('myApp.league',[]).config(['$stateProvider',function ($stateProvi
  * Created by lx on 2017/1/1.
  */
 angular.module('myApp.personAddress',[]).config(['$stateProvider',function ($stateProvider) {
-    $stateProvider.state('personAddress',{
+    $stateProvider.state('tabs.personAddress',{
         url:'/personAddress',
-        templateUrl:'personAddress.html',
-        controller:'personAddressController'
+        views:{
+            'tabs-person':{
+                templateUrl:'personAddress.html',
+                controller:'personAddressController'
+            }
+        }
     })
-}]).controller('personAddressController',['$scope',function ($scope) {
+}]).controller('personAddressController',['$scope','$ionicModal','$rootScope','$ionicPopup',function ($scope,$ionicModal,$rootScope,$ionicPopup) {
+//    新增收货地址模态
+    $ionicModal.fromTemplateUrl('addressModal.html',{
+        scope:$scope,
+        animation: 'slide-in-up'
+    }).then(function(modal) {
+        $scope.modal = modal;
+    });
 
-    $scope.goBack = function () {
-        window.history.go(-1);
+    $scope.address = {
+        //收货地址的数据数组
+        listArray:[{name:'马竹亭',telephone:'18738695633',address:'北京市朝阳区九乡桥东路青麦时代创新园A110',default:true},{name:'马竹亭',telephone:'18738695633',address:'北京市朝阳区九乡桥东路青麦时代创新园A110',default:false},{name:'马竹亭',telephone:'18738695633',address:'北京市朝阳区九乡桥东路青麦时代创新园A110',default:false}],
+        openModal:openModal,
+        closeModal:closeModal,
+        changeDefault:changeDefault,
+        showConfirm:showConfirm
+    };
+
+    //打开模态
+    function openModal() {
+        $scope.modal.show();
+    }
+    //关闭模态
+    function closeModal() {
+        $scope.modal.hide();
+    }
+    //当销毁controller时会清除模态modal
+    $scope.$on('$destroy',function () {
+        $scope.modal.remove();
+    });
+    //跳转时隐藏tab-bar
+    $scope.$on('$ionicView.beforeEnter', function () {
+        $rootScope.hideTabs = true;
+    });
+
+    //实现单选的选择
+    function changeDefault(index) {
+
+        for (var i =0;i<$scope.address.listArray.length;i++){
+            $scope.address.listArray[i].default = false;
+        }
+        $scope.address.listArray[index].default = true;
+        console.log(index);
+    }
+
+    //删除地址的确认弹窗
+    function showConfirm(index) {
+        var myPopup = $ionicPopup.show({
+            cssClass:'myOrder',
+            template:'确认要删除该地址吗?',
+            scope: $scope,
+            buttons: [
+                { text: '取消',
+                    type: ''
+                },
+                {
+                    text: '确定',
+                    type: '',
+                    onTap: function(e) {
+                        $scope.address.listArray.splice(index ,1);
+                        if($scope.address.listArray.length >= 1){
+                            $scope.address.listArray[0].default=true;
+                        }
+                    }
+                }
+            ]
+        });
     }
 }]);
 /**
  * Created by lx on 2017/1/1.
  */
 angular.module('myApp.personCollect',[]).config(['$stateProvider',function ($stateProvider) {
-    $stateProvider.state('personCollect',{
+    $stateProvider.state('tabs.personCollect',{
         url:'/personCollect',
-        templateUrl:'personCollect.html',
-        controller:'personCollectController'
+        views:{
+            'tabs-person':{
+                templateUrl:'personCollect.html',
+                controller:'personCollectController'
+            }
+        }
     })
-}]).controller('personCollectController',['$scope',function ($scope) {
-    $scope.goBack = function () {
-        window.history.go(-1);
-    }
+}]).controller('personCollectController',['$scope','$rootScope',function ($scope,$rootScope) {
+    $scope.$on('$ionicView.beforeEnter', function () {
+        $rootScope.hideTabs = true;
+    });
 }]);
 /**
  * Created by lx on 2017/1/1.
  */
 angular.module('myApp.personConcern',[]).config(['$stateProvider',function ($stateProvider) {
-    $stateProvider.state('personConcern',{
+    $stateProvider.state('tabs.personConcern',{
         url:'/personConcern',
-        templateUrl:'personConcern.html',
-        controller:'personConcernController'
+        views:{
+            'tabs-person':{
+                templateUrl:'personConcern.html',
+                controller:'personConcernController'
+            }
+        }
     })
-}]).controller('personConcernController',['$scope',function ($scope) {
+}]).controller('personConcernController',['$scope','$rootScope',function ($scope,$rootScope) {
 
-    $scope.goBack = function () {
-        window.history.go(-1);
-    }
+    $scope.$on('$ionicView.beforeEnter', function () {
+        $rootScope.hideTabs = true;
+    });
 }]);
 /**
  * Created by lx on 2016/12/27.
@@ -322,43 +417,48 @@ angular.module('myApp.person',[]).config(['$stateProvider',function ($stateProvi
             }
         }
     });
-}]).controller('personController',['$scope','$state','$ionicViewSwitcher',function ($scope,$state,$ionicViewSwitcher) {
+}]).controller('personController',['$scope','$state','$ionicViewSwitcher','$rootScope','$timeout',function ($scope,$state,$ionicViewSwitcher,$rootScope,$timeout) {
+    $scope.$on('$ionicView.beforeEnter', function () {
+        $timeout(function(){
+            $rootScope.hideTabs = false;
+        },300);
+    });
     $scope.person = {
         userName:'你有梦想吗?',
         creditNum:'3800'
     };
     $scope.showOrder = function () {
-        $state.go('personOrder');
+        $state.go('tabs.personOrder');
         $ionicViewSwitcher.nextDirection("forward");
         console.log('我的订单')
     };
     $scope.showCollect = function () {
-        $state.go('personCollect');
+        $state.go('tabs.personCollect');
         $ionicViewSwitcher.nextDirection("forward");
         console.log('我的收藏')
     };
     $scope.showShoppingCar = function () {
-        $state.go('personShoppingCar');
+        $state.go('tabs.personShoppingCar');
         $ionicViewSwitcher.nextDirection("forward");
         console.log('我的购物车')
     };
     $scope.showIntegral = function () {
-        $state.go('personIntegral');
+        $state.go('tabs.personIntegral');
         $ionicViewSwitcher.nextDirection("forward");
         console.log('我的积分')
     };
     $scope.showAddress = function () {
-        $state.go('personAddress');
+        $state.go('tabs.personAddress');
         $ionicViewSwitcher.nextDirection("forward");
         console.log('我的收货地址')
     };
     $scope.showPay = function () {
-        $state.go('personPay');
+        $state.go('tabs.personPay');
         $ionicViewSwitcher.nextDirection("forward");
         console.log('我的支付记录')
     };
     $scope.showConcern = function () {
-        $state.go('personConcern');
+        $state.go('tabs.personConcern');
         $ionicViewSwitcher.nextDirection("forward");
         console.log('我的推荐')
     };
@@ -368,60 +468,81 @@ angular.module('myApp.person',[]).config(['$stateProvider',function ($stateProvi
  * Created by lx on 2017/1/1.
  */
 angular.module('myApp.personIntegral',[]).config(['$stateProvider',function ($stateProvider) {
-    $stateProvider.state('personIntegral',{
+    $stateProvider.state('tabs.personIntegral',{
         url:'/personIntegral',
-        templateUrl:'personIntegral.html',
-        controller:'personIntegralController'
+        views:{
+            'tabs-person':{
+                templateUrl:'personIntegral.html',
+                controller:'personIntegralController'
+            }
+        }
     })
-}]).controller('personIntegralController',['$scope',function ($scope) {
-
-    $scope.goBack = function () {
-        window.history.go(-1);
-    }
+}]).controller('personIntegralController',['$scope','$state','$rootScope',function ($scope,$state,$rootScope) {
+    $scope.goExchange = function () {
+        $state.go('tabs.integral');
+    };
+    $scope.$on('$ionicView.beforeEnter', function () {
+        $rootScope.hideTabs = true;
+    });
 }]);
 /**
  * Created by lx on 2017/1/1.
  */
 angular.module('myApp.personOrder',[]).config(['$stateProvider',function ($stateProvider) {
-    $stateProvider.state('personOrder',{
+    $stateProvider.state('tabs.personOrder',{
         url:'/personOrder',
-        templateUrl:'personOrder.html',
-        controller:'personOrderController'
+        views:{
+            'tabs-person':{
+                templateUrl:'personOrder.html',
+                controller:'personOrderController'
+            }
+        }
     })
-}]).controller('personOrderController',['$scope',function ($scope) {
+}]).controller('personOrderController',['$scope','$rootScope',function ($scope,$rootScope) {
 
-    $scope.goBack = function () {
-        window.history.go(-1);
-    }
+    $scope.$on('$ionicView.beforeEnter', function () {
+        $rootScope.hideTabs = true;
+    });
 }]);
 /**
  * Created by lx on 2017/1/1.
  */
 angular.module('myApp.personPay',[]).config(['$stateProvider',function ($stateProvider) {
-    $stateProvider.state('personPay',{
+    $stateProvider.state('tabs.personPay',{
         url:'/personPay',
-        templateUrl:'personPay.html',
-        controller:'personPayController'
+        views:{
+            'tabs-person':{
+                templateUrl:'personPay.html',
+                controller:'personPayController'
+            }
+        }
     })
-}]).controller('personPayController',['$scope',function ($scope) {
+}]).controller('personPayController',['$scope','$rootScope',function ($scope,$rootScope) {
 
-    $scope.goBack = function () {
-        window.history.go(-1);
-    }
+    $scope.$on('$ionicView.beforeEnter', function () {
+        $rootScope.hideTabs = true;
+    });
 }]);
 /**
  * Created by lx on 2017/1/1.
  */
 angular.module('myApp.personShoppingCar',[]).config(['$stateProvider',function ($stateProvider) {
-    $stateProvider.state('personShoppingCar',{
+    $stateProvider.state('tabs.personShoppingCar',{
         url:'/personShoppingCar',
-        templateUrl:'personShoppingCar.html',
-        controller:'personShoppingCarController'
+        views:{
+            'tabs-person':{
+                templateUrl:'personShoppingCar.html',
+                controller:'personShoppingCarController'
+            }
+        }
     })
-}]).controller('personShoppingCarController',['$scope',function ($scope) {
-    $scope.goBack = function () {
-        window.history.go(-1);
-    }
+}]).controller('personShoppingCarController',['$scope','$rootScope',function ($scope,$rootScope) {
+    $scope.$on('$ionicView.beforeEnter', function () {
+        $rootScope.showTabs = false;
+        $rootScope.hideTabs = true;
+        console.log('11111111')
+    });
+
 }]);
 /**
  * Created by lx on 2016/12/26.
@@ -451,9 +572,9 @@ angular.module('myApp.tabs',['RongWebIMWidget']).config(['$stateProvider',functi
                 rongSendBtn.css('backgroundColor','deepskyblue');
                 var rongcloudKefuChat = angular.element(document.querySelector('.rongcloud-kefuChat'));
                 rongcloudKefuChat.css({'background':'url("../images/icon.png")','backgroundPosition':'-75px'});
-                kf.on('click',function () {
-                    $rootScope.hideTabs = true;
-                    // $state.reload();
+                // kf.on('click',function () {
+                //     $rootScope.hideTabs = true;
+                //     $state.reload();
                     // $scope.openModal();
                     // $state.go('rykf');
                     // console.log(indexRY);
@@ -463,16 +584,18 @@ angular.module('myApp.tabs',['RongWebIMWidget']).config(['$stateProvider',functi
                     // indexRY.style.backgroundColor = 'red';
                     // document.body.removeChild(mm);
                     // rongConversation.removeClass('ng-hide');
-                });
+                // });
                 // var minBtn = angular.element(document.getElementById('header').childNodes[1].childNodes[1]);
                 // minBtn.on('click',function () {
-                //     // $rootScope.hideTabs = false;
-                //     // $state.reload();
+                //     $rootScope.hideTabs = false;
+                //     $state.reload();
+                //     console.log('12345');
                 // });
-                RongWebIMWidget.onClose = function() {
-                    $rootScope.hideTabs = false;
-                    $state.reload();
-                };
+                // RongWebIMWidget.onClose = function() {
+                //     $rootScope.hideTabs = false;
+                //     console.log('12345');
+                //     $state.reload();
+                // };
             }
         });
     $scope.$on('$stateChangeSuccess',function (evt,current) {
