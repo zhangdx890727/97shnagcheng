@@ -25,18 +25,20 @@ html{
 .deliveryAdd_add1 .deliveryAdd_name .name{
     position: absolute;
     left: 2.3rem;
+    font-size: 2rem;
     color: #333333
 }
 .deliveryAdd_add1 .deliveryAdd_name .tel{
     position: absolute;
     right: 2.6rem;
+    font-size: 1.6rem;
     color:#666666
 }
 .deliveryAdd_add1 .deliveryAdd_address{
     margin: 2rem 2.1rem .6rem 2.1rem;
     margin-top:3.4rem;
     padding-bottom: .6rem;
-    border-bottom: solid .1rem #C0BFBF;
+    border-bottom: solid .1rem #ddd;
     font-family: MicrosoftYaHei;
     font-size: 1.2rem;
     color:#666666
@@ -79,7 +81,7 @@ html{
 
 /*footer新增地址*/
 .deliveryAdd_footer{
-    background-color: #E80516;
+    background-color: #ed3745;
     height: 5.2rem
 }
 .deliveryAdd_footer .title{
@@ -122,12 +124,11 @@ html{
 .totalScore-detail{
     position: relative;
     background-color: #FFFFFF;
-    height: 25.4rem;
     margin-bottom: .8rem
 }
 .totalScore-detail .list .item .inDetail{
     font-family: MicrosoftYaHei;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #666666
 }
 .totalScore-detail .list .item .give{
@@ -136,19 +137,19 @@ html{
 }
 .totalScore-detail .list .item .give .text{
     font-family: MicrosoftYaHei;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #666666
 }
 .totalScore-detail .list .item .give .num{
     position: absolute;
     right: 1rem;
     font-family: MicrosoftYaHei;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     color: #EB1E2D
 }
 .totalScore-detail .list .item .date{
     font-family: MicrosoftYaHei;
-    font-size: .9rem;
+    font-size: 1.2rem;
     color: #999999
 }
 
@@ -193,6 +194,9 @@ html{
 
 
 /*弹窗样式*/
+.popup-container{
+    background-color: rgba(0,0,0,.3);
+}
 .popup-container .popup{
     width: 30rem;
     border-radius: .5rem;
@@ -229,4 +233,96 @@ html{
 .item{
     padding: .3rem 1.3rem;
     border: solid .05rem #BDBDBD;
+}
+/*modal样式*/
+.modalTop{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.ad_mainBox{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.ad_mainBox .list p.item{
+    height: 5rem;
+    line-height: 5rem;
+}
+.ad_mainBox .list p.item span{
+    font-size: 2rem;
+}
+.ad_mainBox .list p.item .icon{
+    float: right;
+}
+.ad_mainBox .list .item-input{
+    height: 4.4rem;
+}
+.ad_mainBox .list .last_btn_box{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.ad_mainBox .list .last_btn_box .button{
+    margin: 0;
+    background-color: #ed3745;
+    color: white;
+}
+/*收藏页面*/
+.collect{
+    background-color: #eee;
+}
+.collectMain{
+    background-color: white;
+    height: 10rem;
+    display: flex;
+    margin-bottom: 1rem;
+}
+.collectMain img{
+    height: 8rem;
+    margin: 1rem .5rem;
+}
+.collectTitle{
+    display: flex;
+    height: 5rem;
+}
+.collectBtn{
+    margin-top: 1rem;
+    height: 3rem;
+    display: flex;
+    justify-content: flex-end;
+}
+.collectBtn button{
+    height: 3rem;
+    width: 8rem;
+    background-color: white;
+    border: 0.1rem solid gray;
+    border-radius: .3rem;
+    font-size: 1.2rem;
+    /*margin-left: 2rem;*/
+    margin-right: 1rem;
+}
+.collectBtn button:nth-child(2){
+    color: red;
+    border: .1rem solid red;
+}
+.collectTitle .titleC{
+    width: 80%;
+    margin-top: 1rem;
+    padding: .5rem;
+    height: 4.2rem;
+    overflow: hidden;
+    line-height: 2rem;
+}
+.collectTitle div{
+    width: 20%;
+    margin-top: 1rem;
+    margin-right: .5rem;
+    padding: .5rem;
+    height: 5rem;
+    line-height: 2rem;
+}
+.collectTitle div span{
+    display: block;
+    text-align: right;
 }

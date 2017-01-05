@@ -67,7 +67,7 @@ angular.module('myApp.home',[]).config(['$stateProvider',function ($stateProvide
     };
     $ionicModal.fromTemplateUrl('modalCart.html',{
         scope:$scope,
-        animation: 'slide-in-down'
+        animation: 'slide-in-up'
     }).then(function(modal) {
         $scope.modal = modal;
     });

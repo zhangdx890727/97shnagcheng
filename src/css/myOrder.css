@@ -1,0 +1,36 @@
+.myOrder{
+    background-color: #eee;
+}
+.orderTop{
+    position: fixed;
+    top:0;
+    width: 100%;
+    background-color: white;
+    height: 3.5rem;
+    display: flex;
+    justify-content:space-around;
+}
+.orderTop li{
+    position: relative;
+    display: block;
+    width: 20%;
+    line-height: 2.5rem;
+    margin: .5rem 0;
+    padding: 0 .5rem;
+    text-align: center;
+}
+.orderTop li+li{
+    border-left:.1rem solid gray;
+}
+.orderTop .active{
+    color: red;
+}
+.orderTop .active:before{
+    content: '';
+    position: absolute;
+    bottom: -.5rem;
+    left:.5rem;
+    width: 6rem;
+    height: 0;
+    border-bottom: .2rem solid red;
+}

@@ -16,4 +16,13 @@ angular.module('myApp.personOrder',[]).config(['$stateProvider',function ($state
     $scope.$on('$ionicView.beforeEnter', function () {
         $rootScope.hideTabs = true;
     });
+    $scope.orderSelect = function (event) {
+        var list = angular.element(document.querySelector('.orderTop')).children();
+        var item = angular.element(event.target);
+        list.removeClass('active');
+        item.addClass('active');
+    }
+
+
+
 }]);

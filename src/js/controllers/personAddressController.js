@@ -11,7 +11,7 @@ angular.module('myApp.personAddress',[]).config(['$stateProvider',function ($sta
             }
         }
     })
-}]).controller('personAddressController',['$scope','$ionicModal','$rootScope','$ionicPopup',function ($scope,$ionicModal,$rootScope,$ionicPopup) {
+}]).controller('personAddressController',['$scope','$ionicModal','$rootScope','$ionicPopup','HttpFactory',function ($scope,$ionicModal,$rootScope,$ionicPopup,HttpFactory) {
 //    新增收货地址模态
     $ionicModal.fromTemplateUrl('addressModal.html',{
         scope:$scope,
@@ -22,16 +22,33 @@ angular.module('myApp.personAddress',[]).config(['$stateProvider',function ($sta
 
     $scope.address = {
         //收货地址的数据数组
-        listArray:[{name:'马竹亭',telephone:'18738695633',address:'北京市朝阳区九乡桥东路青麦时代创新园A110',default:true},{name:'马竹亭',telephone:'18738695633',address:'北京市朝阳区九乡桥东路青麦时代创新园A110',default:false},{name:'马竹亭',telephone:'18738695633',address:'北京市朝阳区九乡桥东路青麦时代创新园A110',default:false}],
+        listArray:[],
         openModal:openModal,
         closeModal:closeModal,
         changeDefault:changeDefault,
         showConfirm:showConfirm
     };
-
+    var url = 'http://114.112.94.166/sunny/wap/api/uAddress';
+    HttpFactory.getData(url).then(function (result) {
+       console.log(result.addressData);
+        $scope.address.listArray = result.addressData;
+        $scope.address.listArray[0].default = true;
+    });
     //打开模态
-    function openModal() {
+    function openModal(event) {
         $scope.modal.show();
+        // console.log(event.target.innerText);
+        var addressModal = angular.element(document.querySelector('#address_modal'));
+        var modalTitle = angular.element(document.querySelector('#modalTitle'));
+        addressModal.on('click',function () {
+            $scope.modal.hide();
+        });
+        // console.log(modalTitle[0]);
+        if(event.target.innerText == '新增地址'){
+            modalTitle[0].innerText = '新增收货地址';
+        }else{
+            modalTitle[0].innerText = '编辑收货地址';
+        }
     }
     //关闭模态
     function closeModal() {
@@ -49,7 +66,7 @@ angular.module('myApp.personAddress',[]).config(['$stateProvider',function ($sta
     //实现单选的选择
     function changeDefault(index) {
 
-        for (var i =0;i<$scope.address.listArray.length;i++){
+        for (var i = 0;i < $scope.address.listArray.length;i++){
             $scope.address.listArray[i].default = false;
         }
         $scope.address.listArray[index].default = true;
