@@ -4,6 +4,25 @@
 angular.module('myApp.tabs',['RongWebIMWidget']).config(['$stateProvider',function ($stateProvider) {
 
 }]).controller('tabsController',['$scope','$rootScope','$state','RongCustomerService',function ($scope,$rootScope,$state,RongCustomerService) {
+    ~function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if(clientWidth>=640){
+                    docEl.style.fontSize = '20px';
+                }else{
+                    docEl.style.fontSize = 10 * (clientWidth / 375) + 'px';
+                }
+            };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    }(document, window);
+
+
         var dWidth = document.body.offsetWidth;
         var dHeight = document.body.offsetHeight;
         RongCustomerService.init({

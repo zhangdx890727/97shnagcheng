@@ -147,9 +147,7 @@ angular.module('myApp.homeDetail',[]).config(['$stateProvider',function ($stateP
         controller:'homeDetailController'
     });
 }]).controller('homeDetailController',['$scope',function ($scope) {
-    $scope.goBack  =function () {
-        window.history.go(-1);
-    };
+
 }]);
 /**
  * Created by lx on 2016/12/27.
@@ -646,12 +644,71 @@ angular.module('myApp.personShoppingCar',[]).config(['$stateProvider',function (
             }
         }
     })
-}]).controller('personShoppingCarController',['$scope','$rootScope',function ($scope,$rootScope) {
+}]).controller('personShoppingCarController',['$scope','$rootScope','$ionicPopup','HttpFactory',function ($scope,$rootScope,$ionicPopup,HttpFactory) {
     $scope.$on('$ionicView.beforeEnter', function () {
-        $rootScope.showTabs = false;
         $rootScope.hideTabs = true;
-        console.log('11111111')
     });
+    $scope.shop = {
+        shoppingCartArray:[]
+    };
+    var url = 'http://114.112.94.166/sunny/wap/api/ushoppingCart';
+    HttpFactory.getData(url).then(function (result) {
+        console.log(result.shoppingCart[0]);
+        $scope.shop.shoppingCartArray = result.shoppingCart;
+    });
+
+    $scope.SelectAll = false;
+    $scope.ifSelectAll = function () {
+        $scope.SelectAll = !$scope.SelectAll;
+        for(var i = 0;i < $scope.shop.shoppingCartArray.length;i++ ){
+            if($scope.SelectAll == true){
+                $scope.shop.shoppingCartArray[i].Selected = true;
+            }else {
+                $scope.shop.shoppingCartArray[i].Selected = false;
+            }
+        }
+    };
+    $scope.ifSelected = function (index) {
+        $scope.shop.shoppingCartArray[index].Selected = !$scope.shop.shoppingCartArray[index].Selected;
+        var shoppingSelect = false;
+        for(var k = 0;k < $scope.shop.shoppingCartArray.length;k++){
+            shoppingSelect = shoppingSelect || $scope.shop.shoppingCartArray[k].Selected;
+        }
+        if(shoppingSelect == true){
+            $scope.SelectAll = true;
+        }else{
+            $scope.SelectAll = false;
+        }
+    };
+    $scope.goToDetailView = function () {
+        console.log('跳转商品详情页')
+    };
+    $scope.deleteShopping = function (index) {
+        console.log(index);
+        var myPopup = $ionicPopup.show({
+            cssClass:'myOrder',
+            template:'确定要从购物车中删除该商品吗?',
+            scope: $scope,
+            buttons: [
+                { text: '取消',
+                    type: ''
+                },
+                {
+                    text: '确定',
+                    type: '',
+                    onTap: function(e) {
+                        $scope.shop.shoppingCartArray.splice(index ,1);
+                    }
+                }
+            ]
+        });
+    };
+
+
+
+
+
+
 
 }]);
 /**
@@ -660,6 +717,25 @@ angular.module('myApp.personShoppingCar',[]).config(['$stateProvider',function (
 angular.module('myApp.tabs',['RongWebIMWidget']).config(['$stateProvider',function ($stateProvider) {
 
 }]).controller('tabsController',['$scope','$rootScope','$state','RongCustomerService',function ($scope,$rootScope,$state,RongCustomerService) {
+    ~function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if(clientWidth>=640){
+                    docEl.style.fontSize = '20px';
+                }else{
+                    docEl.style.fontSize = 10 * (clientWidth / 375) + 'px';
+                }
+            };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    }(document, window);
+
+
         var dWidth = document.body.offsetWidth;
         var dHeight = document.body.offsetHeight;
         RongCustomerService.init({
@@ -774,8 +850,8 @@ angular.module('myApp.slideBox',[]).directive('mgSlideBox',[function () {
             $scope.$watch('sourceArray',function (newVal,oldVal) {
                 if (newVal && newVal.length){
                     $scope.isShowSlideBox = true;
-                    // $ionicSlideBoxDelegate.$getByHandle('topCarouselSlideBox').update();
-                    // $ionicSlideBoxDelegate.$getByHandle('topCarouselSlideBox').loop(true);
+                    $ionicSlideBoxDelegate.$getByHandle('topCarouselSlideBox').update();
+                    $ionicSlideBoxDelegate.$getByHandle('topCarouselSlideBox').loop(true);
                     // lastSpan.innerText = ($scope.sourceArray[0]).title;
                     // $scope.slideHasChanged = function (index) {
                     //     lastSpan.innerText = $scope.sourceArray[index].title;
@@ -786,13 +862,13 @@ angular.module('myApp.slideBox',[]).directive('mgSlideBox',[function () {
             //     lastSpan.innerText = $scope.sourceArray[index].title;
             // };
             // 页面刚加载出来的时候禁止滑动
-            $ionicSlideBoxDelegate.$getByHandle('mainSlideBox').enableSlide(false);
-            //拖拽轮播图的时候也要禁止底层的slideBox滑动
-            $scope.drag = function (event) {
-                $ionicSlideBoxDelegate.$getByHandle('mainSlideBox').enableSlide(false);
-                //阻止事件冒泡
-                event.stopPropagation();
-            };
+            // $ionicSlideBoxDelegate.$getByHandle('mainSlideBox').enableSlide(false);
+            // //拖拽轮播图的时候也要禁止底层的slideBox滑动
+            // $scope.drag = function (event) {
+            //     $ionicSlideBoxDelegate.$getByHandle('mainSlideBox').enableSlide(false);
+            //     //阻止事件冒泡
+            //     event.stopPropagation();
+            // };
 
         }],
         replace:true,

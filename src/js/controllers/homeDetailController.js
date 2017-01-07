@@ -8,7 +8,5 @@ angular.module('myApp.homeDetail',[]).config(['$stateProvider',function ($stateP
         controller:'homeDetailController'
     });
 }]).controller('homeDetailController',['$scope',function ($scope) {
-    $scope.goBack  =function () {
-        window.history.go(-1);
-    };
+
 }]);

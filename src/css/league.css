@@ -11,8 +11,16 @@
     line-height: 2.6rem;
     text-align: center;
 }
+.leagueContent.item{
+    margin: 0 0 1rem 0;
+    padding: 0;
+    border:none;
+}
 .leagueContent img{
     width: 100%;
+}
+.leagueContent div{
+    background-color: white;
 }
 .leagueContent p{
     margin-left: 2rem;

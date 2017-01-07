@@ -15,8 +15,8 @@ angular.module('myApp.slideBox',[]).directive('mgSlideBox',[function () {
             $scope.$watch('sourceArray',function (newVal,oldVal) {
                 if (newVal && newVal.length){
                     $scope.isShowSlideBox = true;
-                    // $ionicSlideBoxDelegate.$getByHandle('topCarouselSlideBox').update();
-                    // $ionicSlideBoxDelegate.$getByHandle('topCarouselSlideBox').loop(true);
+                    $ionicSlideBoxDelegate.$getByHandle('topCarouselSlideBox').update();
+                    $ionicSlideBoxDelegate.$getByHandle('topCarouselSlideBox').loop(true);
                     // lastSpan.innerText = ($scope.sourceArray[0]).title;
                     // $scope.slideHasChanged = function (index) {
                     //     lastSpan.innerText = $scope.sourceArray[index].title;
@@ -27,13 +27,13 @@ angular.module('myApp.slideBox',[]).directive('mgSlideBox',[function () {
             //     lastSpan.innerText = $scope.sourceArray[index].title;
             // };
             // 页面刚加载出来的时候禁止滑动
-            $ionicSlideBoxDelegate.$getByHandle('mainSlideBox').enableSlide(false);
-            //拖拽轮播图的时候也要禁止底层的slideBox滑动
-            $scope.drag = function (event) {
-                $ionicSlideBoxDelegate.$getByHandle('mainSlideBox').enableSlide(false);
-                //阻止事件冒泡
-                event.stopPropagation();
-            };
+            // $ionicSlideBoxDelegate.$getByHandle('mainSlideBox').enableSlide(false);
+            // //拖拽轮播图的时候也要禁止底层的slideBox滑动
+            // $scope.drag = function (event) {
+            //     $ionicSlideBoxDelegate.$getByHandle('mainSlideBox').enableSlide(false);
+            //     //阻止事件冒泡
+            //     event.stopPropagation();
+            // };
 
         }],
         replace:true,

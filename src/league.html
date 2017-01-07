@@ -10,17 +10,15 @@
         <img src="images/paymoney.png" alt="">
     </div>
 
-    <ion-content>
-        <div ng-repeat="league in leagueArray" class="leagueContent">
-            <img ng-src="http://114.112.94.166{{league.litpic}}" alt="">
-            <p>{{league.title}}</p>
-            <p>地址：{{league.province}}{{league.city}}{{league.district}}{{league.address}}</p>
-            <p>电话：{{league.mobile}}</p>
+    <ion-content style="background-color: #eee">
+        <div ng-repeat="league in leagueArray" class="leagueContent item">
+            <div><img ng-src="http://114.112.94.166{{league.litpic}}" alt=""></div>
+            <div>
+                <p>{{league.title}}</p>
+                <p>地址：{{league.province}}{{league.city}}{{league.district}}{{league.address}}</p>
+                <p>电话：{{league.mobile}}</p>
+            </div>
         </div>
-
-
-
-
 
     </ion-content>
 </ion-view>

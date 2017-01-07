@@ -326,3 +326,104 @@ html{
     display: block;
     text-align: right;
 }
+/*购物车*/
+.shoppingCart{
+    background-color: #eee;
+}
+.shoppingCart .ifSelectAll{
+    background-color: #ddd;
+    height: 3.5rem;
+    padding: 1rem;
+}
+.selectBtn {
+    width: 10%;
+    height: 3.5rem;
+    float: left;
+    margin-right: .5rem;
+}
+.selectBtn span{
+    display: block;
+    width: 1.3rem;
+    height: 1.3rem;
+    margin: 1rem;
+    border-radius: .65rem;
+    background-color: white;
+    border: .1rem solid gray;
+    text-align: center;
+}
+.selectBtn span i{
+    display: block;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: .4rem;
+    background-color: red;
+    margin: .2rem;
+}
+.shoppingCart .ifSelectAll .selectTitle{
+    height: 3.5rem;
+    line-height: 3.5rem;
+}
+.shoppingCart .item{
+    padding:0 ;
+}
+.shoppingCart .item + .item{
+    margin-bottom: 1rem;
+}
+.shoppingList{
+    height: 10rem;
+    padding: 1rem 1rem 1rem 0;
+}
+.shopContent img{
+    float: left;
+    width: 22.5%;
+    height: 8rem;
+}
+.shoppingList .selectBtn{
+    margin-top: 2.5rem;
+}
+.shopTitle{
+    display: inline-block;
+    float: left;
+    width: 55%;
+}
+.shopTitle p{
+    font-size: 1.2rem;
+    color: red;
+}
+.shopTitle span{
+    white-space: pre-wrap;
+    font-size: 1.2rem;
+}
+.shopPric{
+    float: right;
+}
+.shopPric p{
+    text-align: right;
+}
+.shopPric img{
+    width: 2rem;
+    float: right;
+}
+.shoppingOver{
+    background-color: #ccc;
+    height: 20%;
+    padding: 1rem;
+}
+.shopOver{
+    width: 3.5rem;
+    float: left;
+    margin-top: 3rem;
+    margin-right: .5rem;
+}
+.shopOver span{
+    display: block;
+    width: 3.5rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+    color: white;
+    background-color: #999;
+    text-align: center;
+}
+#shopFooterBar{
+    height: 5rem;
+}
